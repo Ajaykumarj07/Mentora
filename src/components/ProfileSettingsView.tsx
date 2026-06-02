@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { useAppState } from "../contexts/StateContext";
 import { formatAuthError } from "../lib/firebase";
-import { AdminDebugPanel } from "./AdminDebugPanel";
 import {
   User,
   Sliders,
@@ -245,8 +244,6 @@ export const ProfileSettingsView: React.FC = () => {
         </div>
       </div>
 
-      {/* Admin Security & User Sync Diagnostic Console */}
-      <AdminDebugPanel />
     </div>
   );
 };
