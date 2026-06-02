@@ -2,27 +2,42 @@ import { initializeApp, getApps, getApp, FirebaseApp } from "firebase/app";
 import { getAuth, Auth } from "firebase/auth";
 import { getFirestore, Firestore, doc, getDocFromServer } from "firebase/firestore";
 import { getAnalytics, isSupported, Analytics } from "firebase/analytics";
-import firebaseConfig from "../firebase-applet-config.json";
 
-// Centralized Config mapping
 const metaEnv = (import.meta as any).env || {};
 
-// Check if we are running in mock/fallback due to empty keys
-const defaultApiKey = firebaseConfig.apiKey || "";
-const isDraftOrMock = defaultApiKey.includes("MOCK_API_KEY") || !defaultApiKey || defaultApiKey === "YOUR_NEW_API_KEY";
-
 export const finalConfig = {
-  apiKey: isDraftOrMock ? (metaEnv.VITE_FIREBASE_API_KEY || defaultApiKey) : defaultApiKey,
-  authDomain: isDraftOrMock ? (metaEnv.VITE_FIREBASE_AUTH_DOMAIN || firebaseConfig.authDomain) : firebaseConfig.authDomain,
-  projectId: isDraftOrMock ? (metaEnv.VITE_FIREBASE_PROJECT_ID || firebaseConfig.projectId) : firebaseConfig.projectId,
-  storageBucket: isDraftOrMock ? (metaEnv.VITE_FIREBASE_STORAGE_BUCKET || firebaseConfig.storageBucket) : firebaseConfig.storageBucket,
-  messagingSenderId: isDraftOrMock ? (metaEnv.VITE_FIREBASE_MESSAGING_SENDER_ID || firebaseConfig.messagingSenderId) : firebaseConfig.messagingSenderId,
-  appId: isDraftOrMock ? (metaEnv.VITE_FIREBASE_APP_ID || firebaseConfig.appId) : firebaseConfig.appId,
-  measurementId: firebaseConfig.measurementId || "",
-  firestoreDatabaseId: firebaseConfig.firestoreDatabaseId || ""
+  apiKey: (metaEnv.VITE_FIREBASE_API_KEY || "").trim(),
+  authDomain: (metaEnv.VITE_FIREBASE_AUTH_DOMAIN || "").trim(),
+  projectId: (metaEnv.VITE_FIREBASE_PROJECT_ID || "").trim(),
+  storageBucket: (metaEnv.VITE_FIREBASE_STORAGE_BUCKET || "").trim(),
+  messagingSenderId: (metaEnv.VITE_FIREBASE_MESSAGING_SENDER_ID || "").trim(),
+  appId: (metaEnv.VITE_FIREBASE_APP_ID || "").trim(),
+  measurementId: (metaEnv.VITE_FIREBASE_MEASUREMENT_ID || "").trim(),
+  firestoreDatabaseId: (metaEnv.VITE_FIREBASE_FIRESTORE_DATABASE_ID || "").trim(),
 };
 
-export let isMockFirebase = finalConfig.apiKey.includes("MOCK_API_KEY") || !finalConfig.apiKey || finalConfig.apiKey === "YOUR_NEW_API_KEY";
+const requiredFirebaseKeys: Array<keyof typeof finalConfig> = [
+  "apiKey",
+  "authDomain",
+  "projectId",
+  "storageBucket",
+  "messagingSenderId",
+  "appId",
+];
+
+const missingRequiredKeys = requiredFirebaseKeys.filter((key) => !finalConfig[key]);
+const envVarByConfigKey: Record<keyof typeof finalConfig, string> = {
+  apiKey: "VITE_FIREBASE_API_KEY",
+  authDomain: "VITE_FIREBASE_AUTH_DOMAIN",
+  projectId: "VITE_FIREBASE_PROJECT_ID",
+  storageBucket: "VITE_FIREBASE_STORAGE_BUCKET",
+  messagingSenderId: "VITE_FIREBASE_MESSAGING_SENDER_ID",
+  appId: "VITE_FIREBASE_APP_ID",
+  measurementId: "VITE_FIREBASE_MEASUREMENT_ID",
+  firestoreDatabaseId: "VITE_FIREBASE_FIRESTORE_DATABASE_ID",
+};
+
+export let isMockFirebase = missingRequiredKeys.length > 0;
 
 let onMockFallbackCallback: (() => void) | null = null;
 
@@ -40,22 +55,30 @@ let dbInstance: Firestore;
 let analyticsInstance: Analytics | null = null;
 
 try {
-  if (getApps().length === 0) {
-    appInstance = initializeApp(finalConfig);
+  if (isMockFirebase) {
+    console.warn(
+      "Firebase is running in simulated mode because required env vars are missing:",
+      missingRequiredKeys.map((key) => envVarByConfigKey[key])
+    );
+    appInstance = {} as FirebaseApp;
+    dbInstance = {} as Firestore;
+    authInstance = {} as Auth;
   } else {
-    appInstance = getApp();
-  }
-  
-  if (finalConfig.firestoreDatabaseId) {
-    dbInstance = getFirestore(appInstance, finalConfig.firestoreDatabaseId);
-  } else {
-    dbInstance = getFirestore(appInstance);
-  }
-  
-  authInstance = getAuth(appInstance);
+    if (getApps().length === 0) {
+      appInstance = initializeApp(finalConfig);
+    } else {
+      appInstance = getApp();
+    }
+    
+    if (finalConfig.firestoreDatabaseId) {
+      dbInstance = getFirestore(appInstance, finalConfig.firestoreDatabaseId);
+    } else {
+      dbInstance = getFirestore(appInstance);
+    }
+    
+    authInstance = getAuth(appInstance);
 
-  // Async enablement for Firebase Analytics
-  if (!isMockFirebase) {
+    // Async enablement for Firebase Analytics
     isSupported().then((supported) => {
       if (supported && finalConfig.measurementId) {
         try {
