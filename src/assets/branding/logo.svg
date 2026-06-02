@@ -1,0 +1,135 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="100%" height="100%">
+  <defs>
+    <!-- Seamless matching gradient for the face and circuit pathways -->
+    <linearGradient id="logoGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#4d2f83" />   <!-- Deep violet bottom/left -->
+      <stop offset="25%" stop-color="#8b5cf6" />  <!-- Velvet Violet -->
+      <stop offset="60%" stop-color="#ec4899" />  <!-- Hot Pink -->
+      <stop offset="100%" stop-color="#f59e0b" /> <!-- Warm Tangerine Top Right -->
+    </linearGradient>
+
+    <!-- Glowing effect to mimic the premium branding design -->
+    <filter id="beautyGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="10" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+
+  <g transform="translate(10, 0)">
+    <!-- Circuit lines extending from the back of the head -->
+    <g stroke="url(#logoGrad)" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.85">
+      <!-- Topmost circuit strand -->
+      <path d="M 175,210 L 130,210 L 115,195 L 85,195" />
+      <circle cx="85" cy="195" r="4.5" fill="url(#logoGrad)" stroke="#ffffff" stroke-width="1" />
+
+      <!-- Upper mid-circuit strand -->
+      <path d="M 165,240 L 110,240 L 90,220 L 70,220" />
+      <circle cx="70" cy="220" r="4.5" fill="url(#logoGrad)" stroke="#ffffff" stroke-width="1" />
+
+      <!-- Main center circuit strand -->
+      <path d="M 160,265 L 120,265 L 105,250 L 60,250" />
+      <circle cx="60" cy="250" r="5" fill="url(#logoGrad)" stroke="#ffffff" stroke-width="1.5" />
+
+      <!-- Lower mid-circuit strand -->
+      <path d="M 162,290 L 115,290 L 95,270 L 50,270" />
+      <circle cx="50" cy="270" r="4.5" fill="url(#logoGrad)" stroke="#ffffff" stroke-width="1" />
+
+      <!-- Lowest circuit strand -->
+      <path d="M 172,315 L 135,315 L 115,295 L 75,295" />
+      <circle cx="75" cy="295" r="4.5" fill="url(#logoGrad)" stroke="#ffffff" stroke-width="1" />
+
+      <!-- Back trailing root dots (subtle disconnected neural transmitters) -->
+      <circle cx="108" cy="335" r="3.5" fill="url(#logoGrad)" opacity="0.7" />
+      <circle cx="90" cy="170" r="3.5" fill="url(#logoGrad)" opacity="0.7" />
+      <polyline points="152,225 130,225 110,210" stroke-width="2" />
+    </g>
+
+    <!-- Brain-infused floating technical data particles -->
+    <rect x="80" y="235" width="8" height="8" rx="2" fill="url(#logoGrad)" opacity="0.8" />
+    <rect x="95" y="275" width="6" height="6" rx="1.5" fill="url(#logoGrad)" opacity="0.8" />
+    <rect x="75" y="180" width="7" height="7" rx="1.5" fill="url(#logoGrad)" opacity="0.6" />
+
+    <!-- Sleek head profile facing right. Elegant contours match user's image -->
+    <path d="M 165,340 
+             C 165,325 180,310 195,305 
+             C 210,300 220,290 220,282 
+             C 220,278 226,272 230,268 
+             C 234,264 238,252 232,242 
+             C 226,232 232,224 235,221 
+             C 238,218 244,217 242,212 
+             C 240,207 248,198 252,192 
+             C 256,186 250,178 244,175 
+             C 238,172 235,160 225,152
+             C 212,142 195,142 180,147
+             C 165,152 150,172 153,215
+             C 155,242 165,275 168,295
+             C 170,305 164,312 160,320 
+             Z" 
+          fill="url(#logoGrad)" 
+          opacity="0.32" 
+          filter="url(#beautyGlow)" />
+
+    <path d="M 165,340 
+             C 165,325 180,310 195,305 
+             C 210,300 220,290 220,282 
+             C 220,278 226,272 230,268 
+             C 234,264 238,252 232,242 
+             C 226,232 232,224 235,221 
+             C 238,218 244,217 242,212 
+             C 240,207 248,198 252,192 
+             C 256,186 250,178 244,175 
+             C 238,172 235,160 225,152
+             C 212,142 195,142 180,147
+             C 165,152 148,172 150,215
+             C 152,242 162,275 166,295
+             C 168,305 162,312 158,320 
+             C 150,335 155,340 165,340 Z" 
+          fill="url(#logoGrad)" />
+
+    <!-- Highly defined white cutout lines for the Open Book inside head -->
+    <path d="M 183,212 
+             C 192,208 200,212 210,213
+             L 210,233
+             C 200,232 192,228 183,232
+             Z" 
+          fill="#ffffff" />
+    <path d="M 215,213 
+             C 225,212 233,208 242,212
+             L 242,232
+             C 233,228 225,232 215,233
+             Z" 
+          fill="#ffffff" />
+
+    <!-- Premium Book Spine line -->
+    <line x1="212.5" y1="210" x2="212.5" y2="236" stroke="url(#logoGrad)" stroke-width="2.5" stroke-linecap="round" />
+
+    <!-- Horizontal Page accent markers/carvings (gives the distinct open pages effect) -->
+    <path d="M 187,218 L 206,218" stroke="url(#logoGrad)" stroke-width="1.5" stroke-linecap="round" />
+    <path d="M 187,222 L 206,222" stroke="url(#logoGrad)" stroke-width="1.5" stroke-linecap="round" />
+    <path d="M 187,226 L 202,226" stroke="url(#logoGrad)" stroke-width="1.5" stroke-linecap="round" />
+
+    <path d="M 219,218 L 238,218" stroke="url(#logoGrad)" stroke-width="1.5" stroke-linecap="round" />
+    <path d="M 219,222 L 238,222" stroke="url(#logoGrad)" stroke-width="1.5" stroke-linecap="round" />
+    <path d="M 219,226 L 234,226" stroke="url(#logoGrad)" stroke-width="1.5" stroke-linecap="round" />
+
+    <!-- Beautiful Glowing/Shining Star rising above the knowledge book -->
+    <!-- Center coordinate is (212.5, 195) -->
+    <path d="M 212.5,183 
+             Q 212.5,195 224.5,195 
+             Q 212.5,195 212.5,207 
+             Q 212.5,195 200.5,195 
+             Q 212.5,195 212.5,183 Z" 
+          fill="#ffffff" 
+          filter="url(#beautyGlow)" />
+    
+    <path d="M 212.5,183 
+             Q 212.5,195 224.5,195 
+             Q 212.5,195 212.5,207 
+             Q 212.5,195 200.5,195 
+             Q 212.5,195 212.5,183 Z" 
+          fill="#ffffff" />
+  </g>
+</svg>

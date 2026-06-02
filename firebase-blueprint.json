@@ -1,0 +1,106 @@
+{
+  "entities": {
+    "User": {
+      "title": "User Profile",
+      "description": "User profile with gamification stats (XP, level, coins, badge inventory, activity state).",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string" },
+        "displayName": { "type": "string" },
+        "email": { "type": "string" },
+        "photoURL": { "type": "string" },
+        "xp": { "type": "integer" },
+        "level": { "type": "integer" },
+        "coins": { "type": "integer" },
+        "streak": { "type": "integer" },
+        "lastActive": { "type": "string" },
+        "lastLoginAt": { "type": "string" },
+        "badges": { "type": "array" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["uid", "displayName", "email", "xp", "level", "coins", "streak", "lastActive", "lastLoginAt", "createdAt"]
+    },
+    "Note": {
+      "title": "Study Note",
+      "description": "AI-generated study materials and revision cards.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "userId": { "type": "string" },
+        "title": { "type": "string" },
+        "content": { "type": "string" },
+        "summary": { "type": "string" },
+        "flashcards": { "type": "array" },
+        "createdAt": { "type": "string" },
+        "isRawResponseFallback": { "type": "boolean" },
+        "rawText": { "type": "string" }
+      },
+      "required": ["id", "userId", "title", "content", "summary", "createdAt"]
+    },
+    "Quiz": {
+      "title": "Assessment Quiz",
+      "description": "Custom generated study check assessments.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "userId": { "type": "string" },
+        "title": { "type": "string" },
+        "questions": { "type": "array" },
+        "score": { "type": "integer" },
+        "createdAt": { "type": "string" },
+        "isRawResponseFallback": { "type": "boolean" },
+        "rawText": { "type": "string" }
+      },
+      "required": ["id", "userId", "title", "questions", "createdAt"]
+    },
+    "Roadmap": {
+      "title": "Study Roadmap",
+      "description": "Dynamic custom learning pathways and daily tracks.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "userId": { "type": "string" },
+        "subject": { "type": "string" },
+        "durationDays": { "type": "integer" },
+        "steps": { "type": "array" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["id", "userId", "subject", "durationDays", "steps", "createdAt"]
+    },
+    "ChatMessage": {
+      "title": "Live assistant chat message",
+      "description": "A single chat log element representing a prompt or AI explanation.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "userId": { "type": "string" },
+        "sender": { "type": "string" },
+        "text": { "type": "string" },
+        "timestamp": { "type": "string" }
+      },
+      "required": ["id", "userId", "sender", "text", "timestamp"]
+    }
+  },
+  "firestore": {
+    "users/{userId}": {
+      "schema": "User",
+      "description": "User profiles keyed by Firebase Auth UID."
+    },
+    "notes/{noteId}": {
+      "schema": "Note",
+      "description": "Study notes created by authenticated students."
+    },
+    "quizzes/{quizId}": {
+      "schema": "Quiz",
+      "description": "Quizzes generated or taken by authenticated students."
+    },
+    "roadmaps/{roadmapId}": {
+      "schema": "Roadmap",
+      "description": "Roadmap outlines detailing steps, milestones, and completed flags."
+    },
+    "chat_histories/{messageId}": {
+      "schema": "ChatMessage",
+      "description": "Instant Chat historical dialogue units."
+    }
+  }
+}

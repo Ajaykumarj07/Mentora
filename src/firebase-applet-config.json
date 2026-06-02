@@ -1,0 +1,10 @@
+{
+  "projectId": "mentora-ai-v2",
+  "appId": "1:841113557440:web:aeb85146ec3ae2c59b1025",
+  "apiKey": "YOUR_NEW_API_KEY",
+  "authDomain": "mentora-ai-v2.firebaseapp.com",
+  "firestoreDatabaseId": "(default)",
+  "storageBucket": "mentora-ai-v2.firebasestorage.app",
+  "messagingSenderId": "841113557440",
+  "measurementId": "G-B6J4BXE8XF"
+}

@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="100%" height="100%">
+  <defs>
+    <!-- Seamless matching gradient for the face and design -->
+    <linearGradient id="favGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#4d2f83" />
+      <stop offset="25%" stop-color="#8b5cf6" />
+      <stop offset="60%" stop-color="#ec4899" />
+      <stop offset="100%" stop-color="#f59e0b" />
+    </linearGradient>
+    
+    <filter id="liteGlow" x="-10%" y="-10%" width="120%" height="120%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Modern deep dark circle backplate -->
+  <rect width="128" height="128" rx="36" fill="#040815" stroke="#1e293b" stroke-width="2"/>
+
+  <!-- Centered vector head-book icon representation -->
+  <g transform="scale(0.48) translate(70, 72)">
+    <!-- Circuit connections -->
+    <g stroke="url(#favGrad)" stroke-width="4.5" stroke-linecap="round" fill="none" opacity="0.8">
+      <path d="M 160,265 L 120,265 L 105,250 L 60,250" />
+      <circle cx="60" cy="250" r="8" fill="url(#favGrad)" stroke="#ffffff" stroke-width="2" />
+      <path d="M 162,290 L 115,290 L 95,270 L 50,270" />
+      <circle cx="50" cy="270" r="7" fill="url(#favGrad)" stroke="#ffffff" stroke-width="1.5" />
+    </g>
+
+    <!-- Head profile -->
+    <path d="M 165,340 
+             C 165,325 180,310 195,305 
+             C 210,300 220,290 220,282 
+             C 220,278 226,272 230,268 
+             C 234,264 238,252 232,242 
+             C 226,232 232,224 235,221 
+             C 238,218 244,217 242,212 
+             C 240,207 248,198 252,192 
+             C 256,186 250,178 244,175 
+             C 238,172 235,160 225,152
+             C 212,142 195,142 180,147
+             C 165,152 148,172 150,215
+             C 152,242 162,275 166,295
+             C 168,305 162,312 158,320 
+             C 150,335 155,340 165,340 Z" 
+          fill="url(#favGrad)" />
+
+    <!-- Open Book -->
+    <path d="M 183,212 
+             C 192,208 200,212 210,213
+             L 210,233
+             C 200,232 192,228 183,232
+             Z" 
+          fill="#ffffff" />
+    <path d="M 215,213 
+             C 225,212 233,208 242,212
+             L 242,232
+             C 233,228 225,232 215,233
+             Z" 
+          fill="#ffffff" />
+
+    <!-- Spine -->
+    <line x1="212.5" y1="210" x2="212.5" y2="236" stroke="url(#favGrad)" stroke-width="3" stroke-linecap="round" />
+
+    <!-- Shining Star with glow -->
+    <path d="M 212.5,183 
+             Q 212.5,195 224.5,195 
+             Q 212.5,195 212.5,207 
+             Q 212.5,195 200.5,195 
+             Q 212.5,195 212.5,183 Z" 
+          fill="#ffffff" 
+          filter="url(#liteGlow)" />
+  </g>
+</svg>

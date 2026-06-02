@@ -1,0 +1,6 @@
+{
+  "name": "Mentora AI",
+  "description": "An AI-powered educational virtual assistant platform featuring smart note generators, spaced repetition, timelines roadmap planners, and quiz builders.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
