@@ -16,7 +16,7 @@ if (typeof dns.setDefaultResultOrder === "function") {
 const app = express();
 app.use(express.json());
 
-const PORT = 3000;
+const PORT = Number(process.env.PORT) || 3000;
 
 // Lazy initialize Gemini AI client
 let aiInstance: GoogleGenAI | null = null;
