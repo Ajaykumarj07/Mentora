@@ -1,31 +1,41 @@
-name: Mentora CI
+name: Mentora QA & Security CI
 
 on:
   push:
-    branches:
-      - main
+    branches: [ "main" ]
   pull_request:
-    branches:
-      - main
+    branches: [ "main" ]
 
 jobs:
-  build-and-check:
+  build-and-test:
     runs-on: ubuntu-latest
 
+    strategy:
+      matrix:
+        node-version: [18.x, 20.x]
+
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v4
+    - uses: actions/checkout@v3
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 22
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'npm'
 
-      - name: Install Dependencies
-        run: npm install
+    - name: Install Dependencies
+      run: npm ci --legacy-peer-deps
 
-      - name: TypeScript Check
-        run: npm run lint
+    - name: TypeScript Linting
+      run: npm run lint
 
-      - name: Build Application
-        run: npm run build
+    - name: Run Security & API Tests
+      run: npm test
+      env:
+        NODE_ENV: test
+        DISABLE_HMR: true
+
+    - name: Frontend Build Verification
+      run: npm run build
+      env:
+        NODE_ENV: production
