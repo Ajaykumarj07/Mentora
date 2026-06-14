@@ -2,6 +2,8 @@ import request from 'supertest';
 import { app } from '../server';
 
 describe('Mentora API & AI Endpoints', () => {
+  jest.setTimeout(30000);
+
   beforeAll(() => {
     // Suppress console logs during testing to keep output clean
     jest.spyOn(console, 'log').mockImplementation(() => {});

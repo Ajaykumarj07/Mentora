@@ -29,8 +29,11 @@ jobs:
     - name: TypeScript Linting
       run: npm run lint
 
+    - name: Install Firebase CLI
+      run: npm install -g firebase-tools
+
     - name: Run Security & API Tests
-      run: npm test
+      run: firebase emulators:exec --only firestore "npm test"
       env:
         NODE_ENV: test
         DISABLE_HMR: true

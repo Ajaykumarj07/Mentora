@@ -1,9 +1,9 @@
 import express from "express";
-import path from "path";
-import dns from "dns";
+import * as path from "path";
+import * as dns from "dns";
 import { createServer as createViteServer } from "vite";
 import { GoogleGenAI, Type } from "@google/genai";
-import dotenv from "dotenv";
+import * as dotenv from "dotenv";
 import { AIProviderService } from "./src/services/aiProvider";
 
 dotenv.config();
