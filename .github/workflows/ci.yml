@@ -17,6 +17,12 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
+    - name: Set up Java (required for Firebase emulator)
+      uses: actions/setup-java@v4
+      with:
+        distribution: 'temurin'
+        java-version: '17'
+
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v3
       with:

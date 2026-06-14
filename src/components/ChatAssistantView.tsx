@@ -1386,7 +1386,7 @@ I'm your virtual learning assistant. Let's study, explore concepts, or solve fil
               })}
 
               {/* Glowing Dynamic Typing Dots on Streaming generation */}
-              {loading && !activeThread.messages[activeThread.messages.length - 1]?.text.startsWith("⚡ Mentora AI is processing") && (
+              {loading && !activeThread?.messages[activeThread.messages.length - 1]?.text.startsWith("⚡ Mentora AI is processing") && (
                 <div className="flex gap-4 max-w-lg">
                   <div className="w-9 h-9 rounded-xl bg-purple-950/40 border border-purple-500/15 flex items-center justify-center text-purple-400 flex-shrink-0 animate-pulse">
                     <Bot className="w-4 h-4 animate-spin" />
