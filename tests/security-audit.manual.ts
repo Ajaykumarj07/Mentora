@@ -1,6 +1,6 @@
 import {
   initializeTestEnvironment,
-  assertSucceeds,
+  assertFails,
   RulesTestEnvironment,
 } from "@firebase/rules-unit-testing";
 import { readFileSync } from "fs";
@@ -64,9 +64,9 @@ describe("Security Audit: Known Vulnerabilities", () => {
     });
 
     // 2. User attempts to update their own role (Escalation)
-    // Currently, the rules ALLOW this, so assertSucceeds demonstrates the flaw.
+    // The rules now correctly block this, so assertFails verifies the vulnerability is patched.
     const userRef = doc(db, "users", "user-123");
-    await assertSucceeds(
+    await assertFails(
       updateDoc(userRef, {
         role: "admin",
       })

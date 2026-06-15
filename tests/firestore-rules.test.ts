@@ -85,4 +85,37 @@ describe("Firestore Security Rules", () => {
       })
     );
   });
+
+  it("should block standard users from escalating their own role to admin", async () => {
+    if (!emulatorReady || !testEnv) {
+      console.warn("Skipping test due to unavailable emulator");
+      return;
+    }
+
+    const authed = testEnv.authenticatedContext("student-456", { email: "stu@test.com" });
+    const db = authed.firestore();
+
+    await testEnv.withSecurityRulesDisabled(async (context) => {
+      const adminDb = context.firestore();
+      await setDoc(doc(adminDb, "users", "student-456"), {
+        uid: "student-456",
+        email: "stu@test.com",
+        role: "student",
+        xp: 100,
+        level: 1,
+        coins: 0,
+        streak: 0,
+        lastActive: "123",
+        lastLoginAt: "123",
+        createdAt: "123"
+      });
+    });
+
+    const userRef = doc(db, "users", "student-456");
+    await assertFails(
+      updateDoc(userRef, {
+        role: "admin",
+      })
+    );
+  });
 });

@@ -100,7 +100,14 @@ service cloud.firestore {
       allow get: if isSignedIn() && (isOwner(userId) || isAdmin());
       allow list: if isSignedIn() && isAdmin();
       allow create: if isSignedIn() && isOwner(userId) && isValidUser(incoming());
-      allow update: if isSignedIn() && (isOwner(userId) || isAdmin()) && isValidUser(incoming());
+      allow update: if isSignedIn() && (
+        (isAdmin() && isValidUser(incoming())) ||
+        (isOwner(userId) && isValidUser(incoming()) &&
+          incoming().diff(existing()).affectedKeys().hasOnly([
+            'displayName', 'name', 'photoURL', 'xp', 'level', 'coins', 'streak', 'lastActive', 'lastLoginAt', 'badges'
+          ])
+        )
+      );
     }
 
     match /notes/{noteId} {

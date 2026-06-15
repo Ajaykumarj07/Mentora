@@ -5,6 +5,7 @@ import { createServer as createViteServer } from "vite";
 import { GoogleGenAI, Type } from "@google/genai";
 import * as dotenv from "dotenv";
 import { AIProviderService } from "./src/services/aiProvider";
+import { rateLimit } from "express-rate-limit";
 
 dotenv.config();
 
@@ -15,6 +16,18 @@ if (typeof dns.setDefaultResultOrder === "function") {
 
 const app = express();
 app.use(express.json());
+
+const aiLimiter = rateLimit({
+  windowMs: 15 * 60 * 1000,
+  max: 30,
+  standardHeaders: true,
+  legacyHeaders: false,
+  message: {
+    error: "Too many AI generation requests. Please try again later."
+  }
+});
+
+app.use("/api/gemini", aiLimiter);
 
 const PORT = Number(process.env.PORT) || 3000;
 
@@ -973,6 +986,14 @@ Extract the structural summary details, main takeaways, and list key terms.`;
     console.error("Document Summarize Error:", error);
     res.status(500).json({ error: error.message || "Failed to compile document analysis" });
   }
+});
+
+app.use((err: any, req: express.Request, res: express.Response, next: express.NextFunction) => {
+  console.error(err);
+  res.status(500).json({
+    success: false,
+    error: "Internal server error"
+  });
 });
 
 // Configure Vite middleware and static serving
