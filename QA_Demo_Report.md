@@ -1,8 +1,8 @@
 # QA Demo Report - Mentora Playwright E2E
 
 ## Summary Metrics
-- **Total Tests**: 30
-- **Passed**: 30
+- **Total Tests**: 27
+- **Passed**: 27
 - **Failed**: 0
 - **Pass Rate**: 100.00%
 - **Production Readiness**: **READY FOR PRODUCTION**

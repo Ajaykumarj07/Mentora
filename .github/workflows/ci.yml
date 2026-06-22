@@ -44,7 +44,45 @@ jobs:
         NODE_ENV: test
         DISABLE_HMR: true
 
-    - name: Frontend Build Verification
+    - name: Build Production Bundle
       run: npm run build
       env:
         NODE_ENV: production
+
+    - name: Install Playwright Browsers & OS Dependencies
+      run: npx playwright install chromium --with-deps
+
+    - name: Start Applications & Run E2E Tests
+      run: |
+        # Start Firestore Emulator in the background
+        npx firebase emulators:start --only firestore &
+        
+        # Start production backend Express app in the background
+        NODE_ENV=production npm start &
+        
+        # Wait for port 3000 to be available
+        echo "Waiting for server to start on port 3000..."
+        for i in {1..30}; do
+          if curl -s http://localhost:3000 > /dev/null; then
+            echo "Server is up and running!"
+            break
+          fi
+          sleep 1
+        done
+        
+        # Run Playwright E2E tests under Xvfb (since headless: false is configured)
+        xvfb-run npm run test:e2e
+      env:
+        NODE_ENV: test
+        PORT: 3000
+        FIRESTORE_EMULATOR_HOST: "127.0.0.1:8085"
+
+    - name: Upload Test Reports
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
+        name: e2e-test-reports-node-${{ matrix.node-version }}
+        path: |
+          reports/
+          E2E_Test_Report_Mentora.xlsx
+          QA_Demo_Report.md
