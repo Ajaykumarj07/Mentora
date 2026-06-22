@@ -1,0 +1,3782 @@
+{
+  "config": {
+    "argv": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "D:\\Mentora\\Mentora\\node_modules\\@playwright\\test\\cli.js",
+      "test",
+      "tests/playwright-e2e.spec.js",
+      "--headed",
+      "--workers=1"
+    ],
+    "configFile": "D:\\Mentora\\Mentora\\playwright.config.js",
+    "rootDir": "D:/Mentora/Mentora/tests",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "D:/Mentora/Mentora/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "D:/Mentora/Mentora/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "playwright-e2e.spec.js"
+        ],
+        "timeout": 120000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "html",
+        {
+          "outputFolder": "reports/playwright-html"
+        }
+      ],
+      [
+        "json",
+        {
+          "outputFile": "reports/playwright-report.json"
+        }
+      ],
+      [
+        "list",
+        null
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.61.0",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "playwright-e2e.spec.js",
+      "file": "playwright-e2e.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Series 1: Critical Path Student Journey E2E",
+          "file": "playwright-e2e.spec.js",
+          "line": 47,
+          "column": 6,
+          "specs": [
+            {
+              "title": "TC-CRIT-001: Open landing page",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 3184,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-22T04:04:30.792Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Mentora\\Mentora\\test-results\\playwright-e2e-Series-1-Cr-96128--CRIT-001-Open-landing-page-chromium\\test-finished-1.png"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\Mentora\\Mentora\\test-results\\playwright-e2e-Series-1-Cr-96128--CRIT-001-Open-landing-page-chromium\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "bb51358a27a0e1666511-08cc20fd52695c8a53ce",
+              "file": "playwright-e2e.spec.js",
+              "line": 64,
+              "column": 3
+            },
+            {
+              "title": "TC-CRIT-002: Inject guest session",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 3027,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-22T04:04:36.984Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Mentora\\Mentora\\test-results\\playwright-e2e-Series-1-Cr-2d48a-IT-002-Inject-guest-session-chromium\\test-finished-1.png"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\Mentora\\Mentora\\test-results\\playwright-e2e-Series-1-Cr-2d48a-IT-002-Inject-guest-session-chromium\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "bb51358a27a0e1666511-e962d100d0297b368c33",
+              "file": "playwright-e2e.spec.js",
+              "line": 76,
+              "column": 3
+            },
+            {
+              "title": "TC-CRIT-003: Verify Dashboard loads widgets",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 675,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-22T04:04:41.443Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Mentora\\Mentora\\test-results\\playwright-e2e-Series-1-Cr-9d02b-ify-Dashboard-loads-widgets-chromium\\test-finished-1.png"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\Mentora\\Mentora\\test-results\\playwright-e2e-Series-1-Cr-9d02b-ify-Dashboard-loads-widgets-chromium\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "bb51358a27a0e1666511-413b54a57f457ec4308e",
+              "file": "playwright-e2e.spec.js",
+              "line": 88,
+              "column": 3
+            },
+            {
+              "title": "TC-CRIT-004: Navigate to Tutor AI",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1908,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-22T04:04:43.150Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Mentora\\Mentora\\test-results\\playwright-e2e-Series-1-Cr-c73fa-IT-004-Navigate-to-Tutor-AI-chromium\\test-finished-1.png"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\Mentora\\Mentora\\test-results\\playwright-e2e-Series-1-Cr-c73fa-IT-004-Navigate-to-Tutor-AI-chromium\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "bb51358a27a0e1666511-613d40ecfc4c3c48769c",
+              "file": "playwright-e2e.spec.js",
+              "line": 96,
+              "column": 3
+            },
+            {
+              "title": "TC-CRIT-005: Ask a sample question",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1700,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-22T04:04:46.833Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Mentora\\Mentora\\test-results\\playwright-e2e-Series-1-Cr-d3346-T-005-Ask-a-sample-question-chromium\\test-finished-1.png"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\Mentora\\Mentora\\test-results\\playwright-e2e-Series-1-Cr-d3346-T-005-Ask-a-sample-question-chromium\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "bb51358a27a0e1666511-6e5ad96ee9a82441ee65",
+              "file": "playwright-e2e.spec.js",
+              "line": 105,
+              "column": 3
+            },
+            {
+              "title": "TC-CRIT-006: Verify response generated",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 859,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-22T04:04:50.097Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Mentora\\Mentora\\test-results\\playwright-e2e-Series-1-Cr-3ede1-6-Verify-response-generated-chromium\\test-finished-1.png"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\Mentora\\Mentora\\test-results\\playwright-e2e-Series-1-Cr-3ede1-6-Verify-response-generated-chromium\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "bb51358a27a0e1666511-2b646baae3dee088eff6",
+              "file": "playwright-e2e.spec.js",
+              "line": 114,
+              "column": 3
+            },
+            {
+              "title": "TC-CRIT-007: Navigate to Notes Generator",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 941,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-22T04:04:52.124Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Mentora\\Mentora\\test-results\\playwright-e2e-Series-1-Cr-04427-Navigate-to-Notes-Generator-chromium\\test-finished-1.png"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\Mentora\\Mentora\\test-results\\playwright-e2e-Series-1-Cr-04427-Navigate-to-Notes-Generator-chromium\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "bb51358a27a0e1666511-d1421ec005c0e0db1b0d",
+              "file": "playwright-e2e.spec.js",
+              "line": 122,
+              "column": 3
+            },
+            {
+              "title": "TC-CRIT-008: Generate notes",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 782,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-22T04:04:53.998Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Mentora\\Mentora\\test-results\\playwright-e2e-Series-1-Cr-7341e--TC-CRIT-008-Generate-notes-chromium\\test-finished-1.png"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\Mentora\\Mentora\\test-results\\playwright-e2e-Series-1-Cr-7341e--TC-CRIT-008-Generate-notes-chromium\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "bb51358a27a0e1666511-ff9e4b16e6f34b082422",
+              "file": "playwright-e2e.spec.js",
+              "line": 129,
+              "column": 3
+            },
+            {
+              "title": "TC-CRIT-009: Verify notes rendered",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1673,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-22T04:04:55.818Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Mentora\\Mentora\\test-results\\playwright-e2e-Series-1-Cr-20cf9-T-009-Verify-notes-rendered-chromium\\test-finished-1.png"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\Mentora\\Mentora\\test-results\\playwright-e2e-Series-1-Cr-20cf9-T-009-Verify-notes-rendered-chromium\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "bb51358a27a0e1666511-f855140ba45363154918",
+              "file": "playwright-e2e.spec.js",
+              "line": 137,
+              "column": 3
+            },
+            {
+              "title": "TC-CRIT-010: Navigate to Quiz Generator",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 745,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-22T04:04:58.989Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Mentora\\Mentora\\test-results\\playwright-e2e-Series-1-Cr-bc9ac--Navigate-to-Quiz-Generator-chromium\\test-finished-1.png"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\Mentora\\Mentora\\test-results\\playwright-e2e-Series-1-Cr-bc9ac--Navigate-to-Quiz-Generator-chromium\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "bb51358a27a0e1666511-fbb0b8fb18f73cbe40a3",
+              "file": "playwright-e2e.spec.js",
+              "line": 144,
+              "column": 3
+            },
+            {
+              "title": "TC-CRIT-011: Generate quiz",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 727,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-22T04:05:00.811Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Mentora\\Mentora\\test-results\\playwright-e2e-Series-1-Cr-36b61-E-TC-CRIT-011-Generate-quiz-chromium\\test-finished-1.png"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\Mentora\\Mentora\\test-results\\playwright-e2e-Series-1-Cr-36b61-E-TC-CRIT-011-Generate-quiz-chromium\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "bb51358a27a0e1666511-ca82938a122823c87338",
+              "file": "playwright-e2e.spec.js",
+              "line": 151,
+              "column": 3
+            },
+            {
+              "title": "TC-CRIT-012: Answer one question",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 639,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-22T04:05:02.498Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Mentora\\Mentora\\test-results\\playwright-e2e-Series-1-Cr-2ef00-RIT-012-Answer-one-question-chromium\\test-finished-1.png"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\Mentora\\Mentora\\test-results\\playwright-e2e-Series-1-Cr-2ef00-RIT-012-Answer-one-question-chromium\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "bb51358a27a0e1666511-b1a47c59d1032244603b",
+              "file": "playwright-e2e.spec.js",
+              "line": 159,
+              "column": 3
+            },
+            {
+              "title": "TC-CRIT-013: Verify score calculation",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 464,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-22T04:05:04.030Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Mentora\\Mentora\\test-results\\playwright-e2e-Series-1-Cr-6af6d-13-Verify-score-calculation-chromium\\test-finished-1.png"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\Mentora\\Mentora\\test-results\\playwright-e2e-Series-1-Cr-6af6d-13-Verify-score-calculation-chromium\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "bb51358a27a0e1666511-f86dec98a703e0a5d0cd",
+              "file": "playwright-e2e.spec.js",
+              "line": 170,
+              "column": 3
+            },
+            {
+              "title": "TC-CRIT-014: Navigate to Study Plan (Roadmaps)",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 662,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-22T04:05:05.145Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Mentora\\Mentora\\test-results\\playwright-e2e-Series-1-Cr-59fb3-ate-to-Study-Plan-Roadmaps--chromium\\test-finished-1.png"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\Mentora\\Mentora\\test-results\\playwright-e2e-Series-1-Cr-59fb3-ate-to-Study-Plan-Roadmaps--chromium\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "bb51358a27a0e1666511-18f250831fb29b0ab6e9",
+              "file": "playwright-e2e.spec.js",
+              "line": 181,
+              "column": 3
+            },
+            {
+              "title": "TC-CRIT-015: Generate roadmap",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 743,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-22T04:05:06.624Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Mentora\\Mentora\\test-results\\playwright-e2e-Series-1-Cr-97710-C-CRIT-015-Generate-roadmap-chromium\\test-finished-1.png"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\Mentora\\Mentora\\test-results\\playwright-e2e-Series-1-Cr-97710-C-CRIT-015-Generate-roadmap-chromium\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "bb51358a27a0e1666511-4590665b81e9394c859c",
+              "file": "playwright-e2e.spec.js",
+              "line": 188,
+              "column": 3
+            },
+            {
+              "title": "TC-CRIT-016: Verify roadmap steps",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 606,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-22T04:05:08.311Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Mentora\\Mentora\\test-results\\playwright-e2e-Series-1-Cr-ca722-IT-016-Verify-roadmap-steps-chromium\\test-finished-1.png"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\Mentora\\Mentora\\test-results\\playwright-e2e-Series-1-Cr-ca722-IT-016-Verify-roadmap-steps-chromium\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "bb51358a27a0e1666511-1dc87a571d48b1266805",
+              "file": "playwright-e2e.spec.js",
+              "line": 196,
+              "column": 3
+            },
+            {
+              "title": "TC-CRIT-017: Navigate to Profile Settings",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 982,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-22T04:05:09.638Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Mentora\\Mentora\\test-results\\playwright-e2e-Series-1-Cr-57056-avigate-to-Profile-Settings-chromium\\test-finished-1.png"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\Mentora\\Mentora\\test-results\\playwright-e2e-Series-1-Cr-57056-avigate-to-Profile-Settings-chromium\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "bb51358a27a0e1666511-db7c64288e7a20426226",
+              "file": "playwright-e2e.spec.js",
+              "line": 203,
+              "column": 3
+            },
+            {
+              "title": "TC-CRIT-018: Verify profile details",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 538,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-22T04:05:11.745Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Mentora\\Mentora\\test-results\\playwright-e2e-Series-1-Cr-f26c1--018-Verify-profile-details-chromium\\test-finished-1.png"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\Mentora\\Mentora\\test-results\\playwright-e2e-Series-1-Cr-f26c1--018-Verify-profile-details-chromium\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "bb51358a27a0e1666511-277277eeb1e3ce8da6ab",
+              "file": "playwright-e2e.spec.js",
+              "line": 210,
+              "column": 3
+            },
+            {
+              "title": "TC-CRIT-019: Click logout",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 747,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-22T04:05:13.221Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Mentora\\Mentora\\test-results\\playwright-e2e-Series-1-Cr-e39f1-2E-TC-CRIT-019-Click-logout-chromium\\test-finished-1.png"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\Mentora\\Mentora\\test-results\\playwright-e2e-Series-1-Cr-e39f1-2E-TC-CRIT-019-Click-logout-chromium\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "bb51358a27a0e1666511-dde03df5582df58130d5",
+              "file": "playwright-e2e.spec.js",
+              "line": 218,
+              "column": 3
+            },
+            {
+              "title": "TC-CRIT-020: Verify landing page redirect after logout",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 449,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-22T04:05:15.040Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Mentora\\Mentora\\test-results\\playwright-e2e-Series-1-Cr-14518--page-redirect-after-logout-chromium\\test-finished-1.png"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\Mentora\\Mentora\\test-results\\playwright-e2e-Series-1-Cr-14518--page-redirect-after-logout-chromium\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "bb51358a27a0e1666511-bc090decdff9dc216e0d",
+              "file": "playwright-e2e.spec.js",
+              "line": 225,
+              "column": 3
+            }
+          ]
+        },
+        {
+          "title": "Series 2: Functional Testing",
+          "file": "playwright-e2e.spec.js",
+          "line": 237,
+          "column": 6,
+          "specs": [
+            {
+              "title": "TC-FUN-001: Verify functional validation rule #1",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1481,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-22T04:05:16.694Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Mentora\\Mentora\\test-results\\playwright-e2e-Series-2-Fu-9cf2b-unctional-validation-rule-1-chromium\\test-finished-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\Mentora\\Mentora\\test-results\\playwright-e2e-Series-2-Fu-9cf2b-unctional-validation-rule-1-chromium\\video.webm"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\Mentora\\Mentora\\test-results\\playwright-e2e-Series-2-Fu-9cf2b-unctional-validation-rule-1-chromium\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "bb51358a27a0e1666511-5062b49e3b50c898f57c",
+              "file": "playwright-e2e.spec.js",
+              "line": 240,
+              "column": 5
+            },
+            {
+              "title": "TC-FUN-002: Verify functional validation rule #2",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1008,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-22T04:05:18.276Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Mentora\\Mentora\\test-results\\playwright-e2e-Series-2-Fu-59539-unctional-validation-rule-2-chromium\\test-finished-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\Mentora\\Mentora\\test-results\\playwright-e2e-Series-2-Fu-59539-unctional-validation-rule-2-chromium\\video.webm"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\Mentora\\Mentora\\test-results\\playwright-e2e-Series-2-Fu-59539-unctional-validation-rule-2-chromium\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "bb51358a27a0e1666511-426c3225e294cc574d75",
+              "file": "playwright-e2e.spec.js",
+              "line": 240,
+              "column": 5
+            },
+            {
+              "title": "TC-FUN-003: Verify functional validation rule #3",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1178,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-22T04:05:19.394Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Mentora\\Mentora\\test-results\\playwright-e2e-Series-2-Fu-56b9b-unctional-validation-rule-3-chromium\\test-finished-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\Mentora\\Mentora\\test-results\\playwright-e2e-Series-2-Fu-56b9b-unctional-validation-rule-3-chromium\\video.webm"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\Mentora\\Mentora\\test-results\\playwright-e2e-Series-2-Fu-56b9b-unctional-validation-rule-3-chromium\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "bb51358a27a0e1666511-4afb2daf59365fb84565",
+              "file": "playwright-e2e.spec.js",
+              "line": 240,
+              "column": 5
+            },
+            {
+              "title": "TC-FUN-004: Verify functional validation rule #4",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 1158,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m400\u001b[39m\nReceived: \u001b[31m429\u001b[39m",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m400\u001b[39m\nReceived: \u001b[31m429\u001b[39m\n    at D:\\Mentora\\Mentora\\tests\\playwright-e2e.spec.js:271:35",
+                        "location": {
+                          "file": "D:\\Mentora\\Mentora\\tests\\playwright-e2e.spec.js",
+                          "column": 35,
+                          "line": 271
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 269 |\u001b[39m           data\u001b[33m:\u001b[39m {}\n \u001b[90m 270 |\u001b[39m         })\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 271 |\u001b[39m         expect(response\u001b[33m.\u001b[39mstatus())\u001b[33m.\u001b[39mtoBe(\u001b[35m400\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                   \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 272 |\u001b[39m         recordTest(id\u001b[33m,\u001b[39m \u001b[32m'Functional Testing'\u001b[39m\u001b[33m,\u001b[39m \u001b[32m'API Protection'\u001b[39m\u001b[33m,\u001b[39m \u001b[32m'POST generate-quiz rejects missing topic'\u001b[39m\u001b[33m,\u001b[39m \u001b[32m'Send post request missing topic'\u001b[39m\u001b[33m,\u001b[39m \u001b[32m'HTTP 400'\u001b[39m\u001b[33m,\u001b[39m \u001b[32m'Passed'\u001b[39m\u001b[33m,\u001b[39m \u001b[32m'Passed'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 273 |\u001b[39m       } \u001b[36melse\u001b[39m \u001b[36mif\u001b[39m (i \u001b[33m===\u001b[39m \u001b[35m5\u001b[39m) {\n \u001b[90m 274 |\u001b[39m         \u001b[90m// AI note generator mock topic\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Mentora\\Mentora\\tests\\playwright-e2e.spec.js",
+                            "column": 35,
+                            "line": 271
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m400\u001b[39m\nReceived: \u001b[31m429\u001b[39m\n\n\u001b[0m \u001b[90m 269 |\u001b[39m           data\u001b[33m:\u001b[39m {}\n \u001b[90m 270 |\u001b[39m         })\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 271 |\u001b[39m         expect(response\u001b[33m.\u001b[39mstatus())\u001b[33m.\u001b[39mtoBe(\u001b[35m400\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                   \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 272 |\u001b[39m         recordTest(id\u001b[33m,\u001b[39m \u001b[32m'Functional Testing'\u001b[39m\u001b[33m,\u001b[39m \u001b[32m'API Protection'\u001b[39m\u001b[33m,\u001b[39m \u001b[32m'POST generate-quiz rejects missing topic'\u001b[39m\u001b[33m,\u001b[39m \u001b[32m'Send post request missing topic'\u001b[39m\u001b[33m,\u001b[39m \u001b[32m'HTTP 400'\u001b[39m\u001b[33m,\u001b[39m \u001b[32m'Passed'\u001b[39m\u001b[33m,\u001b[39m \u001b[32m'Passed'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 273 |\u001b[39m       } \u001b[36melse\u001b[39m \u001b[36mif\u001b[39m (i \u001b[33m===\u001b[39m \u001b[35m5\u001b[39m) {\n \u001b[90m 274 |\u001b[39m         \u001b[90m// AI note generator mock topic\u001b[39m\u001b[0m\n\u001b[2m    at D:\\Mentora\\Mentora\\tests\\playwright-e2e.spec.js:271:35\u001b[22m"
+                        }
+                      ],
+                      "stdout": [
+                        {
+                          "text": "🟢 Playwright Excel Report saved at: D:\\Mentora\\Mentora\\reports\\E2E_Test_Report_Mentora.xlsx\n"
+                        },
+                        {
+                          "text": "🟢 Playwright Excel Report saved at: D:\\Mentora\\Mentora\\E2E_Test_Report_Mentora.xlsx\n"
+                        },
+                        {
+                          "text": "🟢 QA_Demo_Report.md generated successfully.\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-22T04:05:20.721Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Mentora\\Mentora\\test-results\\playwright-e2e-Series-2-Fu-3eab5-unctional-validation-rule-4-chromium\\test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\Mentora\\Mentora\\test-results\\playwright-e2e-Series-2-Fu-3eab5-unctional-validation-rule-4-chromium\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Mentora\\Mentora\\test-results\\playwright-e2e-Series-2-Fu-3eab5-unctional-validation-rule-4-chromium\\error-context.md"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Mentora\\Mentora\\test-results\\playwright-e2e-Series-2-Fu-3eab5-unctional-validation-rule-4-chromium\\error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\Mentora\\Mentora\\test-results\\playwright-e2e-Series-2-Fu-3eab5-unctional-validation-rule-4-chromium\\trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Mentora\\Mentora\\tests\\playwright-e2e.spec.js",
+                        "column": 35,
+                        "line": 271
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "bb51358a27a0e1666511-eef79babe45051e93dd5",
+              "file": "playwright-e2e.spec.js",
+              "line": 240,
+              "column": 5
+            },
+            {
+              "title": "TC-FUN-005: Verify functional validation rule #5",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 1930,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m200\u001b[39m\nReceived: \u001b[31m429\u001b[39m",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m200\u001b[39m\nReceived: \u001b[31m429\u001b[39m\n    at D:\\Mentora\\Mentora\\tests\\playwright-e2e.spec.js:278:35",
+                        "location": {
+                          "file": "D:\\Mentora\\Mentora\\tests\\playwright-e2e.spec.js",
+                          "column": 35,
+                          "line": 278
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 276 |\u001b[39m           data\u001b[33m:\u001b[39m { topic\u001b[33m:\u001b[39m \u001b[32m'Microbiology'\u001b[39m }\n \u001b[90m 277 |\u001b[39m         })\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 278 |\u001b[39m         expect(response\u001b[33m.\u001b[39mstatus())\u001b[33m.\u001b[39mtoBe(\u001b[35m200\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                   \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 279 |\u001b[39m         \u001b[36mconst\u001b[39m json \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m response\u001b[33m.\u001b[39mjson()\u001b[33m;\u001b[39m\n \u001b[90m 280 |\u001b[39m         expect(json\u001b[33m.\u001b[39mtitle)\u001b[33m.\u001b[39mtoBeDefined()\u001b[33m;\u001b[39m\n \u001b[90m 281 |\u001b[39m         recordTest(id\u001b[33m,\u001b[39m \u001b[32m'Functional Testing'\u001b[39m\u001b[33m,\u001b[39m \u001b[32m'Notes Generator'\u001b[39m\u001b[33m,\u001b[39m \u001b[32m'POST generate-notes returns JSON notes'\u001b[39m\u001b[33m,\u001b[39m \u001b[32m'Send valid topic'\u001b[39m\u001b[33m,\u001b[39m \u001b[32m'HTTP 200 with structured notes JSON'\u001b[39m\u001b[33m,\u001b[39m \u001b[32m'Passed'\u001b[39m\u001b[33m,\u001b[39m \u001b[32m'Passed'\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Mentora\\Mentora\\tests\\playwright-e2e.spec.js",
+                            "column": 35,
+                            "line": 278
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m200\u001b[39m\nReceived: \u001b[31m429\u001b[39m\n\n\u001b[0m \u001b[90m 276 |\u001b[39m           data\u001b[33m:\u001b[39m { topic\u001b[33m:\u001b[39m \u001b[32m'Microbiology'\u001b[39m }\n \u001b[90m 277 |\u001b[39m         })\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 278 |\u001b[39m         expect(response\u001b[33m.\u001b[39mstatus())\u001b[33m.\u001b[39mtoBe(\u001b[35m200\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                   \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 279 |\u001b[39m         \u001b[36mconst\u001b[39m json \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m response\u001b[33m.\u001b[39mjson()\u001b[33m;\u001b[39m\n \u001b[90m 280 |\u001b[39m         expect(json\u001b[33m.\u001b[39mtitle)\u001b[33m.\u001b[39mtoBeDefined()\u001b[33m;\u001b[39m\n \u001b[90m 281 |\u001b[39m         recordTest(id\u001b[33m,\u001b[39m \u001b[32m'Functional Testing'\u001b[39m\u001b[33m,\u001b[39m \u001b[32m'Notes Generator'\u001b[39m\u001b[33m,\u001b[39m \u001b[32m'POST generate-notes returns JSON notes'\u001b[39m\u001b[33m,\u001b[39m \u001b[32m'Send valid topic'\u001b[39m\u001b[33m,\u001b[39m \u001b[32m'HTTP 200 with structured notes JSON'\u001b[39m\u001b[33m,\u001b[39m \u001b[32m'Passed'\u001b[39m\u001b[33m,\u001b[39m \u001b[32m'Passed'\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m\n\u001b[2m    at D:\\Mentora\\Mentora\\tests\\playwright-e2e.spec.js:278:35\u001b[22m"
+                        }
+                      ],
+                      "stdout": [
+                        {
+                          "text": "🟢 Playwright Excel Report saved at: D:\\Mentora\\Mentora\\reports\\E2E_Test_Report_Mentora.xlsx\n"
+                        },
+                        {
+                          "text": "🟢 Playwright Excel Report saved at: D:\\Mentora\\Mentora\\E2E_Test_Report_Mentora.xlsx\n"
+                        },
+                        {
+                          "text": "🟢 QA_Demo_Report.md generated successfully.\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-22T04:05:24.633Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Mentora\\Mentora\\test-results\\playwright-e2e-Series-2-Fu-ee5b1-unctional-validation-rule-5-chromium\\test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\Mentora\\Mentora\\test-results\\playwright-e2e-Series-2-Fu-ee5b1-unctional-validation-rule-5-chromium\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Mentora\\Mentora\\test-results\\playwright-e2e-Series-2-Fu-ee5b1-unctional-validation-rule-5-chromium\\error-context.md"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Mentora\\Mentora\\test-results\\playwright-e2e-Series-2-Fu-ee5b1-unctional-validation-rule-5-chromium\\error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\Mentora\\Mentora\\test-results\\playwright-e2e-Series-2-Fu-ee5b1-unctional-validation-rule-5-chromium\\trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Mentora\\Mentora\\tests\\playwright-e2e.spec.js",
+                        "column": 35,
+                        "line": 278
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "bb51358a27a0e1666511-4a374767bacbb37ff35e",
+              "file": "playwright-e2e.spec.js",
+              "line": 240,
+              "column": 5
+            },
+            {
+              "title": "TC-FUN-006: Verify functional validation rule #6",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1745,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-22T04:05:30.558Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Mentora\\Mentora\\test-results\\playwright-e2e-Series-2-Fu-a8f4e-unctional-validation-rule-6-chromium\\test-finished-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\Mentora\\Mentora\\test-results\\playwright-e2e-Series-2-Fu-a8f4e-unctional-validation-rule-6-chromium\\video.webm"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\Mentora\\Mentora\\test-results\\playwright-e2e-Series-2-Fu-a8f4e-unctional-validation-rule-6-chromium\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "bb51358a27a0e1666511-6706cef0a863c6c0241c",
+              "file": "playwright-e2e.spec.js",
+              "line": 240,
+              "column": 5
+            },
+            {
+              "title": "TC-FUN-007: Verify functional validation rule #7",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1074,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-22T04:05:33.499Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Mentora\\Mentora\\test-results\\playwright-e2e-Series-2-Fu-e0703-unctional-validation-rule-7-chromium\\test-finished-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\Mentora\\Mentora\\test-results\\playwright-e2e-Series-2-Fu-e0703-unctional-validation-rule-7-chromium\\video.webm"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\Mentora\\Mentora\\test-results\\playwright-e2e-Series-2-Fu-e0703-unctional-validation-rule-7-chromium\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "bb51358a27a0e1666511-25d83183e1c58736cc92",
+              "file": "playwright-e2e.spec.js",
+              "line": 240,
+              "column": 5
+            },
+            {
+              "title": "TC-FUN-008: Verify functional validation rule #8",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1088,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-22T04:05:34.739Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Mentora\\Mentora\\test-results\\playwright-e2e-Series-2-Fu-72dc6-unctional-validation-rule-8-chromium\\test-finished-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\Mentora\\Mentora\\test-results\\playwright-e2e-Series-2-Fu-72dc6-unctional-validation-rule-8-chromium\\video.webm"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\Mentora\\Mentora\\test-results\\playwright-e2e-Series-2-Fu-72dc6-unctional-validation-rule-8-chromium\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "bb51358a27a0e1666511-24a68a4f1d86918dba64",
+              "file": "playwright-e2e.spec.js",
+              "line": 240,
+              "column": 5
+            },
+            {
+              "title": "TC-FUN-009: Verify functional validation rule #9",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1019,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-22T04:05:35.950Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Mentora\\Mentora\\test-results\\playwright-e2e-Series-2-Fu-4eaf4-unctional-validation-rule-9-chromium\\test-finished-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\Mentora\\Mentora\\test-results\\playwright-e2e-Series-2-Fu-4eaf4-unctional-validation-rule-9-chromium\\video.webm"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\Mentora\\Mentora\\test-results\\playwright-e2e-Series-2-Fu-4eaf4-unctional-validation-rule-9-chromium\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "bb51358a27a0e1666511-a1dbc45aae39a49e1701",
+              "file": "playwright-e2e.spec.js",
+              "line": 240,
+              "column": 5
+            },
+            {
+              "title": "TC-FUN-010: Verify functional validation rule #10",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1077,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-22T04:05:37.084Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Mentora\\Mentora\\test-results\\playwright-e2e-Series-2-Fu-8cef8-nctional-validation-rule-10-chromium\\test-finished-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\Mentora\\Mentora\\test-results\\playwright-e2e-Series-2-Fu-8cef8-nctional-validation-rule-10-chromium\\video.webm"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\Mentora\\Mentora\\test-results\\playwright-e2e-Series-2-Fu-8cef8-nctional-validation-rule-10-chromium\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "bb51358a27a0e1666511-6b0e2bfcd3705fda7b09",
+              "file": "playwright-e2e.spec.js",
+              "line": 240,
+              "column": 5
+            },
+            {
+              "title": "TC-FUN-011: Verify functional validation rule #11",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1047,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-22T04:05:38.309Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Mentora\\Mentora\\test-results\\playwright-e2e-Series-2-Fu-61d03-nctional-validation-rule-11-chromium\\test-finished-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\Mentora\\Mentora\\test-results\\playwright-e2e-Series-2-Fu-61d03-nctional-validation-rule-11-chromium\\video.webm"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\Mentora\\Mentora\\test-results\\playwright-e2e-Series-2-Fu-61d03-nctional-validation-rule-11-chromium\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "bb51358a27a0e1666511-9bcd4749054fca8f9496",
+              "file": "playwright-e2e.spec.js",
+              "line": 240,
+              "column": 5
+            },
+            {
+              "title": "TC-FUN-012: Verify functional validation rule #12",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1045,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-22T04:05:39.511Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Mentora\\Mentora\\test-results\\playwright-e2e-Series-2-Fu-eeefc-nctional-validation-rule-12-chromium\\test-finished-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\Mentora\\Mentora\\test-results\\playwright-e2e-Series-2-Fu-eeefc-nctional-validation-rule-12-chromium\\video.webm"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\Mentora\\Mentora\\test-results\\playwright-e2e-Series-2-Fu-eeefc-nctional-validation-rule-12-chromium\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "bb51358a27a0e1666511-80221264aa61dfe2ccb8",
+              "file": "playwright-e2e.spec.js",
+              "line": 240,
+              "column": 5
+            },
+            {
+              "title": "TC-FUN-013: Verify functional validation rule #13",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1062,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-22T04:05:40.676Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Mentora\\Mentora\\test-results\\playwright-e2e-Series-2-Fu-ea0a1-nctional-validation-rule-13-chromium\\test-finished-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\Mentora\\Mentora\\test-results\\playwright-e2e-Series-2-Fu-ea0a1-nctional-validation-rule-13-chromium\\video.webm"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\Mentora\\Mentora\\test-results\\playwright-e2e-Series-2-Fu-ea0a1-nctional-validation-rule-13-chromium\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "bb51358a27a0e1666511-ec9dd1950701dd8af017",
+              "file": "playwright-e2e.spec.js",
+              "line": 240,
+              "column": 5
+            },
+            {
+              "title": "TC-FUN-014: Verify functional validation rule #14",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 998,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-22T04:05:41.883Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Mentora\\Mentora\\test-results\\playwright-e2e-Series-2-Fu-f78c7-nctional-validation-rule-14-chromium\\test-finished-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\Mentora\\Mentora\\test-results\\playwright-e2e-Series-2-Fu-f78c7-nctional-validation-rule-14-chromium\\video.webm"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\Mentora\\Mentora\\test-results\\playwright-e2e-Series-2-Fu-f78c7-nctional-validation-rule-14-chromium\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "bb51358a27a0e1666511-942adc792e1cb947ec8a",
+              "file": "playwright-e2e.spec.js",
+              "line": 240,
+              "column": 5
+            },
+            {
+              "title": "TC-FUN-015: Verify functional validation rule #15",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1014,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-22T04:05:43.048Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Mentora\\Mentora\\test-results\\playwright-e2e-Series-2-Fu-831fe-nctional-validation-rule-15-chromium\\test-finished-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\Mentora\\Mentora\\test-results\\playwright-e2e-Series-2-Fu-831fe-nctional-validation-rule-15-chromium\\video.webm"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\Mentora\\Mentora\\test-results\\playwright-e2e-Series-2-Fu-831fe-nctional-validation-rule-15-chromium\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "bb51358a27a0e1666511-270531f57dc689ed457b",
+              "file": "playwright-e2e.spec.js",
+              "line": 240,
+              "column": 5
+            },
+            {
+              "title": "TC-FUN-016: Verify functional validation rule #16",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1079,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-22T04:05:44.178Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Mentora\\Mentora\\test-results\\playwright-e2e-Series-2-Fu-2201d-nctional-validation-rule-16-chromium\\test-finished-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\Mentora\\Mentora\\test-results\\playwright-e2e-Series-2-Fu-2201d-nctional-validation-rule-16-chromium\\video.webm"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\Mentora\\Mentora\\test-results\\playwright-e2e-Series-2-Fu-2201d-nctional-validation-rule-16-chromium\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "bb51358a27a0e1666511-e199261cdd68504ce055",
+              "file": "playwright-e2e.spec.js",
+              "line": 240,
+              "column": 5
+            },
+            {
+              "title": "TC-FUN-017: Verify functional validation rule #17",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1046,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-22T04:05:45.368Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Mentora\\Mentora\\test-results\\playwright-e2e-Series-2-Fu-95849-nctional-validation-rule-17-chromium\\test-finished-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\Mentora\\Mentora\\test-results\\playwright-e2e-Series-2-Fu-95849-nctional-validation-rule-17-chromium\\video.webm"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\Mentora\\Mentora\\test-results\\playwright-e2e-Series-2-Fu-95849-nctional-validation-rule-17-chromium\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "bb51358a27a0e1666511-e5ac8571656187a9746f",
+              "file": "playwright-e2e.spec.js",
+              "line": 240,
+              "column": 5
+            },
+            {
+              "title": "TC-FUN-018: Verify functional validation rule #18",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1094,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-22T04:05:46.524Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Mentora\\Mentora\\test-results\\playwright-e2e-Series-2-Fu-ec94a-nctional-validation-rule-18-chromium\\test-finished-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\Mentora\\Mentora\\test-results\\playwright-e2e-Series-2-Fu-ec94a-nctional-validation-rule-18-chromium\\video.webm"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\Mentora\\Mentora\\test-results\\playwright-e2e-Series-2-Fu-ec94a-nctional-validation-rule-18-chromium\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "bb51358a27a0e1666511-4a8bfc40def95adc38a9",
+              "file": "playwright-e2e.spec.js",
+              "line": 240,
+              "column": 5
+            },
+            {
+              "title": "TC-FUN-019: Verify functional validation rule #19",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1070,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-22T04:05:47.730Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Mentora\\Mentora\\test-results\\playwright-e2e-Series-2-Fu-76363-nctional-validation-rule-19-chromium\\test-finished-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\Mentora\\Mentora\\test-results\\playwright-e2e-Series-2-Fu-76363-nctional-validation-rule-19-chromium\\video.webm"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\Mentora\\Mentora\\test-results\\playwright-e2e-Series-2-Fu-76363-nctional-validation-rule-19-chromium\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "bb51358a27a0e1666511-cfd4eacd1b70fa1eb0ee",
+              "file": "playwright-e2e.spec.js",
+              "line": 240,
+              "column": 5
+            },
+            {
+              "title": "TC-FUN-020: Verify functional validation rule #20",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1053,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-22T04:05:48.925Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Mentora\\Mentora\\test-results\\playwright-e2e-Series-2-Fu-35f96-nctional-validation-rule-20-chromium\\test-finished-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\Mentora\\Mentora\\test-results\\playwright-e2e-Series-2-Fu-35f96-nctional-validation-rule-20-chromium\\video.webm"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\Mentora\\Mentora\\test-results\\playwright-e2e-Series-2-Fu-35f96-nctional-validation-rule-20-chromium\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "bb51358a27a0e1666511-75ccae58faa65ca0a008",
+              "file": "playwright-e2e.spec.js",
+              "line": 240,
+              "column": 5
+            },
+            {
+              "title": "TC-FUN-021: Verify functional validation rule #21",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1008,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-22T04:05:50.135Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Mentora\\Mentora\\test-results\\playwright-e2e-Series-2-Fu-8f9c6-nctional-validation-rule-21-chromium\\test-finished-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\Mentora\\Mentora\\test-results\\playwright-e2e-Series-2-Fu-8f9c6-nctional-validation-rule-21-chromium\\video.webm"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\Mentora\\Mentora\\test-results\\playwright-e2e-Series-2-Fu-8f9c6-nctional-validation-rule-21-chromium\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "bb51358a27a0e1666511-b863783346163e9f9bb1",
+              "file": "playwright-e2e.spec.js",
+              "line": 240,
+              "column": 5
+            },
+            {
+              "title": "TC-FUN-022: Verify functional validation rule #22",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 989,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-22T04:05:51.289Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Mentora\\Mentora\\test-results\\playwright-e2e-Series-2-Fu-0c09c-nctional-validation-rule-22-chromium\\test-finished-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\Mentora\\Mentora\\test-results\\playwright-e2e-Series-2-Fu-0c09c-nctional-validation-rule-22-chromium\\video.webm"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\Mentora\\Mentora\\test-results\\playwright-e2e-Series-2-Fu-0c09c-nctional-validation-rule-22-chromium\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "bb51358a27a0e1666511-47011f579b400a4efafb",
+              "file": "playwright-e2e.spec.js",
+              "line": 240,
+              "column": 5
+            },
+            {
+              "title": "TC-FUN-023: Verify functional validation rule #23",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 990,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-22T04:05:52.448Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Mentora\\Mentora\\test-results\\playwright-e2e-Series-2-Fu-ba8c1-nctional-validation-rule-23-chromium\\test-finished-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\Mentora\\Mentora\\test-results\\playwright-e2e-Series-2-Fu-ba8c1-nctional-validation-rule-23-chromium\\video.webm"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\Mentora\\Mentora\\test-results\\playwright-e2e-Series-2-Fu-ba8c1-nctional-validation-rule-23-chromium\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "bb51358a27a0e1666511-6fe6779f8e5dcc1c59d5",
+              "file": "playwright-e2e.spec.js",
+              "line": 240,
+              "column": 5
+            },
+            {
+              "title": "TC-FUN-024: Verify functional validation rule #24",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1034,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-22T04:05:53.548Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Mentora\\Mentora\\test-results\\playwright-e2e-Series-2-Fu-52f3f-nctional-validation-rule-24-chromium\\test-finished-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\Mentora\\Mentora\\test-results\\playwright-e2e-Series-2-Fu-52f3f-nctional-validation-rule-24-chromium\\video.webm"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\Mentora\\Mentora\\test-results\\playwright-e2e-Series-2-Fu-52f3f-nctional-validation-rule-24-chromium\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "bb51358a27a0e1666511-f6b40c94f5fb4b68a89f",
+              "file": "playwright-e2e.spec.js",
+              "line": 240,
+              "column": 5
+            },
+            {
+              "title": "TC-FUN-025: Verify functional validation rule #25",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1090,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-22T04:05:54.734Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Mentora\\Mentora\\test-results\\playwright-e2e-Series-2-Fu-49df7-nctional-validation-rule-25-chromium\\test-finished-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\Mentora\\Mentora\\test-results\\playwright-e2e-Series-2-Fu-49df7-nctional-validation-rule-25-chromium\\video.webm"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\Mentora\\Mentora\\test-results\\playwright-e2e-Series-2-Fu-49df7-nctional-validation-rule-25-chromium\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "bb51358a27a0e1666511-63be99d2ec78c1e9737e",
+              "file": "playwright-e2e.spec.js",
+              "line": 240,
+              "column": 5
+            },
+            {
+              "title": "TC-FUN-026: Verify functional validation rule #26",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1151,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-22T04:05:55.941Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Mentora\\Mentora\\test-results\\playwright-e2e-Series-2-Fu-02ca7-nctional-validation-rule-26-chromium\\test-finished-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\Mentora\\Mentora\\test-results\\playwright-e2e-Series-2-Fu-02ca7-nctional-validation-rule-26-chromium\\video.webm"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\Mentora\\Mentora\\test-results\\playwright-e2e-Series-2-Fu-02ca7-nctional-validation-rule-26-chromium\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "bb51358a27a0e1666511-6fe85929c6ffb1ff9fb4",
+              "file": "playwright-e2e.spec.js",
+              "line": 240,
+              "column": 5
+            },
+            {
+              "title": "TC-FUN-027: Verify functional validation rule #27",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1106,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-22T04:05:57.200Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Mentora\\Mentora\\test-results\\playwright-e2e-Series-2-Fu-5ed2e-nctional-validation-rule-27-chromium\\test-finished-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\Mentora\\Mentora\\test-results\\playwright-e2e-Series-2-Fu-5ed2e-nctional-validation-rule-27-chromium\\video.webm"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\Mentora\\Mentora\\test-results\\playwright-e2e-Series-2-Fu-5ed2e-nctional-validation-rule-27-chromium\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "bb51358a27a0e1666511-e0dcb2ef0c95dc3e8b14",
+              "file": "playwright-e2e.spec.js",
+              "line": 240,
+              "column": 5
+            },
+            {
+              "title": "TC-FUN-028: Verify functional validation rule #28",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1161,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-22T04:05:58.390Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Mentora\\Mentora\\test-results\\playwright-e2e-Series-2-Fu-c8111-nctional-validation-rule-28-chromium\\test-finished-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\Mentora\\Mentora\\test-results\\playwright-e2e-Series-2-Fu-c8111-nctional-validation-rule-28-chromium\\video.webm"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\Mentora\\Mentora\\test-results\\playwright-e2e-Series-2-Fu-c8111-nctional-validation-rule-28-chromium\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "bb51358a27a0e1666511-fae6a6ece2be75f3de58",
+              "file": "playwright-e2e.spec.js",
+              "line": 240,
+              "column": 5
+            },
+            {
+              "title": "TC-FUN-029: Verify functional validation rule #29",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1062,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-22T04:05:59.669Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Mentora\\Mentora\\test-results\\playwright-e2e-Series-2-Fu-23d93-nctional-validation-rule-29-chromium\\test-finished-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\Mentora\\Mentora\\test-results\\playwright-e2e-Series-2-Fu-23d93-nctional-validation-rule-29-chromium\\video.webm"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\Mentora\\Mentora\\test-results\\playwright-e2e-Series-2-Fu-23d93-nctional-validation-rule-29-chromium\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "bb51358a27a0e1666511-2fbebde1bb280bea3312",
+              "file": "playwright-e2e.spec.js",
+              "line": 240,
+              "column": 5
+            },
+            {
+              "title": "TC-FUN-030: Verify functional validation rule #30",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 972,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-22T04:06:00.858Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Mentora\\Mentora\\test-results\\playwright-e2e-Series-2-Fu-6111a-nctional-validation-rule-30-chromium\\test-finished-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\Mentora\\Mentora\\test-results\\playwright-e2e-Series-2-Fu-6111a-nctional-validation-rule-30-chromium\\video.webm"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\Mentora\\Mentora\\test-results\\playwright-e2e-Series-2-Fu-6111a-nctional-validation-rule-30-chromium\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "bb51358a27a0e1666511-850f21e2ed68432bc2f4",
+              "file": "playwright-e2e.spec.js",
+              "line": 240,
+              "column": 5
+            },
+            {
+              "title": "TC-FUN-031: Verify functional validation rule #31",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1028,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-22T04:06:01.933Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Mentora\\Mentora\\test-results\\playwright-e2e-Series-2-Fu-ba087-nctional-validation-rule-31-chromium\\test-finished-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\Mentora\\Mentora\\test-results\\playwright-e2e-Series-2-Fu-ba087-nctional-validation-rule-31-chromium\\video.webm"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\Mentora\\Mentora\\test-results\\playwright-e2e-Series-2-Fu-ba087-nctional-validation-rule-31-chromium\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "bb51358a27a0e1666511-4ff804d79d74315278ca",
+              "file": "playwright-e2e.spec.js",
+              "line": 240,
+              "column": 5
+            },
+            {
+              "title": "TC-FUN-032: Verify functional validation rule #32",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1139,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-22T04:06:03.093Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Mentora\\Mentora\\test-results\\playwright-e2e-Series-2-Fu-f8b64-nctional-validation-rule-32-chromium\\test-finished-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\Mentora\\Mentora\\test-results\\playwright-e2e-Series-2-Fu-f8b64-nctional-validation-rule-32-chromium\\video.webm"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\Mentora\\Mentora\\test-results\\playwright-e2e-Series-2-Fu-f8b64-nctional-validation-rule-32-chromium\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "bb51358a27a0e1666511-fbe7c72fc4923e1cedb3",
+              "file": "playwright-e2e.spec.js",
+              "line": 240,
+              "column": 5
+            },
+            {
+              "title": "TC-FUN-033: Verify functional validation rule #33",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 999,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-22T04:06:04.339Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Mentora\\Mentora\\test-results\\playwright-e2e-Series-2-Fu-4a6c6-nctional-validation-rule-33-chromium\\test-finished-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\Mentora\\Mentora\\test-results\\playwright-e2e-Series-2-Fu-4a6c6-nctional-validation-rule-33-chromium\\video.webm"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\Mentora\\Mentora\\test-results\\playwright-e2e-Series-2-Fu-4a6c6-nctional-validation-rule-33-chromium\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "bb51358a27a0e1666511-a280a1692229c12ddf10",
+              "file": "playwright-e2e.spec.js",
+              "line": 240,
+              "column": 5
+            },
+            {
+              "title": "TC-FUN-034: Verify functional validation rule #34",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1062,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-22T04:06:05.410Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Mentora\\Mentora\\test-results\\playwright-e2e-Series-2-Fu-7391b-nctional-validation-rule-34-chromium\\test-finished-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\Mentora\\Mentora\\test-results\\playwright-e2e-Series-2-Fu-7391b-nctional-validation-rule-34-chromium\\video.webm"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\Mentora\\Mentora\\test-results\\playwright-e2e-Series-2-Fu-7391b-nctional-validation-rule-34-chromium\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "bb51358a27a0e1666511-aa6b2977baaaa35dabed",
+              "file": "playwright-e2e.spec.js",
+              "line": 240,
+              "column": 5
+            },
+            {
+              "title": "TC-FUN-035: Verify functional validation rule #35",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "interrupted",
+                      "duration": 1047,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-22T04:06:06.524Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Mentora\\Mentora\\test-results\\playwright-e2e-Series-2-Fu-85423-nctional-validation-rule-35-chromium\\test-finished-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\Mentora\\Mentora\\test-results\\playwright-e2e-Series-2-Fu-85423-nctional-validation-rule-35-chromium\\video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "bb51358a27a0e1666511-5725ad8764be5dce2e85",
+              "file": "playwright-e2e.spec.js",
+              "line": 240,
+              "column": 5
+            },
+            {
+              "title": "TC-FUN-036: Verify functional validation rule #36",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "🟢 Playwright Excel Report saved at: D:\\Mentora\\Mentora\\reports\\E2E_Test_Report_Mentora.xlsx\n"
+                        },
+                        {
+                          "text": "🟢 Playwright Excel Report saved at: D:\\Mentora\\Mentora\\E2E_Test_Report_Mentora.xlsx\n"
+                        },
+                        {
+                          "text": "🟢 QA_Demo_Report.md generated successfully.\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-22T04:06:07.639Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\Mentora\\Mentora\\test-results\\playwright-e2e-Series-2-Fu-cd9ef-nctional-validation-rule-36-chromium\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "bb51358a27a0e1666511-a5151a50767e4f8da03b",
+              "file": "playwright-e2e.spec.js",
+              "line": 240,
+              "column": 5
+            },
+            {
+              "title": "TC-FUN-037: Verify functional validation rule #37",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "bb51358a27a0e1666511-feeba9b6262c6b50de15",
+              "file": "playwright-e2e.spec.js",
+              "line": 240,
+              "column": 5
+            },
+            {
+              "title": "TC-FUN-038: Verify functional validation rule #38",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "bb51358a27a0e1666511-e1e094b0702fb1498298",
+              "file": "playwright-e2e.spec.js",
+              "line": 240,
+              "column": 5
+            },
+            {
+              "title": "TC-FUN-039: Verify functional validation rule #39",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "bb51358a27a0e1666511-f57696191ad7012521df",
+              "file": "playwright-e2e.spec.js",
+              "line": 240,
+              "column": 5
+            },
+            {
+              "title": "TC-FUN-040: Verify functional validation rule #40",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "bb51358a27a0e1666511-1a331da9a6387a397062",
+              "file": "playwright-e2e.spec.js",
+              "line": 240,
+              "column": 5
+            },
+            {
+              "title": "TC-FUN-041: Verify functional validation rule #41",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "bb51358a27a0e1666511-3389bb8db78dda16ac75",
+              "file": "playwright-e2e.spec.js",
+              "line": 240,
+              "column": 5
+            },
+            {
+              "title": "TC-FUN-042: Verify functional validation rule #42",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "bb51358a27a0e1666511-dab68e3b5825911be8b3",
+              "file": "playwright-e2e.spec.js",
+              "line": 240,
+              "column": 5
+            },
+            {
+              "title": "TC-FUN-043: Verify functional validation rule #43",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "bb51358a27a0e1666511-aa9acafc46103b4bc5be",
+              "file": "playwright-e2e.spec.js",
+              "line": 240,
+              "column": 5
+            },
+            {
+              "title": "TC-FUN-044: Verify functional validation rule #44",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "bb51358a27a0e1666511-faed21b830d776f6f56b",
+              "file": "playwright-e2e.spec.js",
+              "line": 240,
+              "column": 5
+            },
+            {
+              "title": "TC-FUN-045: Verify functional validation rule #45",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "bb51358a27a0e1666511-ca636b6a6007da3a1e68",
+              "file": "playwright-e2e.spec.js",
+              "line": 240,
+              "column": 5
+            },
+            {
+              "title": "TC-FUN-046: Verify functional validation rule #46",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "bb51358a27a0e1666511-e5652f45780a663406c4",
+              "file": "playwright-e2e.spec.js",
+              "line": 240,
+              "column": 5
+            },
+            {
+              "title": "TC-FUN-047: Verify functional validation rule #47",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "bb51358a27a0e1666511-a1a532c0da2c1ecb258b",
+              "file": "playwright-e2e.spec.js",
+              "line": 240,
+              "column": 5
+            },
+            {
+              "title": "TC-FUN-048: Verify functional validation rule #48",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "bb51358a27a0e1666511-ac28bcd6b7eeed324b93",
+              "file": "playwright-e2e.spec.js",
+              "line": 240,
+              "column": 5
+            },
+            {
+              "title": "TC-FUN-049: Verify functional validation rule #49",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "bb51358a27a0e1666511-f5ef17d20fbf7d29d2a9",
+              "file": "playwright-e2e.spec.js",
+              "line": 240,
+              "column": 5
+            },
+            {
+              "title": "TC-FUN-050: Verify functional validation rule #50",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "bb51358a27a0e1666511-fb41513e8be6e036eb8e",
+              "file": "playwright-e2e.spec.js",
+              "line": 240,
+              "column": 5
+            }
+          ]
+        },
+        {
+          "title": "Series 3: UI Sizing and Styles",
+          "file": "playwright-e2e.spec.js",
+          "line": 293,
+          "column": 6,
+          "specs": [
+            {
+              "title": "TC-UI-001: Verify layout style guideline #1",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "bb51358a27a0e1666511-89ecd6eddaf88fd198d7",
+              "file": "playwright-e2e.spec.js",
+              "line": 296,
+              "column": 5
+            },
+            {
+              "title": "TC-UI-002: Verify layout style guideline #2",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "bb51358a27a0e1666511-5911d2f3a44ee032a2bf",
+              "file": "playwright-e2e.spec.js",
+              "line": 296,
+              "column": 5
+            },
+            {
+              "title": "TC-UI-003: Verify layout style guideline #3",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "bb51358a27a0e1666511-59a3aa6a708d21cb811d",
+              "file": "playwright-e2e.spec.js",
+              "line": 296,
+              "column": 5
+            },
+            {
+              "title": "TC-UI-004: Verify layout style guideline #4",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "bb51358a27a0e1666511-01762d6ad0217f215b7e",
+              "file": "playwright-e2e.spec.js",
+              "line": 296,
+              "column": 5
+            },
+            {
+              "title": "TC-UI-005: Verify layout style guideline #5",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "bb51358a27a0e1666511-959f9ea550a188cad450",
+              "file": "playwright-e2e.spec.js",
+              "line": 296,
+              "column": 5
+            },
+            {
+              "title": "TC-UI-006: Verify layout style guideline #6",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "bb51358a27a0e1666511-6c2ea823209237789526",
+              "file": "playwright-e2e.spec.js",
+              "line": 296,
+              "column": 5
+            },
+            {
+              "title": "TC-UI-007: Verify layout style guideline #7",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "bb51358a27a0e1666511-04bc1507bfb6f90f9ba3",
+              "file": "playwright-e2e.spec.js",
+              "line": 296,
+              "column": 5
+            },
+            {
+              "title": "TC-UI-008: Verify layout style guideline #8",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "bb51358a27a0e1666511-bdffff17c6fa46bdfd55",
+              "file": "playwright-e2e.spec.js",
+              "line": 296,
+              "column": 5
+            },
+            {
+              "title": "TC-UI-009: Verify layout style guideline #9",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "bb51358a27a0e1666511-d4f541de8c56b7292197",
+              "file": "playwright-e2e.spec.js",
+              "line": 296,
+              "column": 5
+            },
+            {
+              "title": "TC-UI-010: Verify layout style guideline #10",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "bb51358a27a0e1666511-57d1172969dc3694142e",
+              "file": "playwright-e2e.spec.js",
+              "line": 296,
+              "column": 5
+            },
+            {
+              "title": "TC-UI-011: Verify layout style guideline #11",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "bb51358a27a0e1666511-92ea76376475fbba3a9b",
+              "file": "playwright-e2e.spec.js",
+              "line": 296,
+              "column": 5
+            },
+            {
+              "title": "TC-UI-012: Verify layout style guideline #12",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "bb51358a27a0e1666511-1098ba84a830b3dead40",
+              "file": "playwright-e2e.spec.js",
+              "line": 296,
+              "column": 5
+            },
+            {
+              "title": "TC-UI-013: Verify layout style guideline #13",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "bb51358a27a0e1666511-17f855645056dcd5ccd5",
+              "file": "playwright-e2e.spec.js",
+              "line": 296,
+              "column": 5
+            },
+            {
+              "title": "TC-UI-014: Verify layout style guideline #14",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "bb51358a27a0e1666511-83bf8a69a02eaadbd6a3",
+              "file": "playwright-e2e.spec.js",
+              "line": 296,
+              "column": 5
+            },
+            {
+              "title": "TC-UI-015: Verify layout style guideline #15",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "bb51358a27a0e1666511-6f27dc7492f8308da213",
+              "file": "playwright-e2e.spec.js",
+              "line": 296,
+              "column": 5
+            },
+            {
+              "title": "TC-UI-016: Verify layout style guideline #16",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "bb51358a27a0e1666511-d983da5353e536ae255b",
+              "file": "playwright-e2e.spec.js",
+              "line": 296,
+              "column": 5
+            },
+            {
+              "title": "TC-UI-017: Verify layout style guideline #17",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "bb51358a27a0e1666511-c162f281f58f7cdf73b0",
+              "file": "playwright-e2e.spec.js",
+              "line": 296,
+              "column": 5
+            },
+            {
+              "title": "TC-UI-018: Verify layout style guideline #18",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "bb51358a27a0e1666511-2752f7b0d79455655126",
+              "file": "playwright-e2e.spec.js",
+              "line": 296,
+              "column": 5
+            },
+            {
+              "title": "TC-UI-019: Verify layout style guideline #19",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "bb51358a27a0e1666511-67fe3c1efef91b45ad18",
+              "file": "playwright-e2e.spec.js",
+              "line": 296,
+              "column": 5
+            },
+            {
+              "title": "TC-UI-020: Verify layout style guideline #20",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "bb51358a27a0e1666511-4bb36f28de7ae2c81e85",
+              "file": "playwright-e2e.spec.js",
+              "line": 296,
+              "column": 5
+            },
+            {
+              "title": "TC-UI-021: Verify layout style guideline #21",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "bb51358a27a0e1666511-2ddbca10cc1a66186040",
+              "file": "playwright-e2e.spec.js",
+              "line": 296,
+              "column": 5
+            },
+            {
+              "title": "TC-UI-022: Verify layout style guideline #22",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "bb51358a27a0e1666511-ab08543d7fe34da804aa",
+              "file": "playwright-e2e.spec.js",
+              "line": 296,
+              "column": 5
+            },
+            {
+              "title": "TC-UI-023: Verify layout style guideline #23",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "bb51358a27a0e1666511-c7f5028c20b1a00619af",
+              "file": "playwright-e2e.spec.js",
+              "line": 296,
+              "column": 5
+            },
+            {
+              "title": "TC-UI-024: Verify layout style guideline #24",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "bb51358a27a0e1666511-2489272205010b3bb695",
+              "file": "playwright-e2e.spec.js",
+              "line": 296,
+              "column": 5
+            },
+            {
+              "title": "TC-UI-025: Verify layout style guideline #25",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "bb51358a27a0e1666511-2458effb9d382293c224",
+              "file": "playwright-e2e.spec.js",
+              "line": 296,
+              "column": 5
+            },
+            {
+              "title": "TC-UI-026: Verify layout style guideline #26",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "bb51358a27a0e1666511-be20e0c8ac3c64e2fa1a",
+              "file": "playwright-e2e.spec.js",
+              "line": 296,
+              "column": 5
+            },
+            {
+              "title": "TC-UI-027: Verify layout style guideline #27",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "bb51358a27a0e1666511-7c4403812845ae4ecadf",
+              "file": "playwright-e2e.spec.js",
+              "line": 296,
+              "column": 5
+            },
+            {
+              "title": "TC-UI-028: Verify layout style guideline #28",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "bb51358a27a0e1666511-d74730e25b8e289f3a65",
+              "file": "playwright-e2e.spec.js",
+              "line": 296,
+              "column": 5
+            },
+            {
+              "title": "TC-UI-029: Verify layout style guideline #29",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "bb51358a27a0e1666511-6f5027047fd913e09327",
+              "file": "playwright-e2e.spec.js",
+              "line": 296,
+              "column": 5
+            },
+            {
+              "title": "TC-UI-030: Verify layout style guideline #30",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "bb51358a27a0e1666511-8c0fcf5bcf1be745f670",
+              "file": "playwright-e2e.spec.js",
+              "line": 296,
+              "column": 5
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-06-22T04:04:28.809Z",
+    "duration": 99750.35800000001,
+    "expected": 52,
+    "skipped": 46,
+    "unexpected": 2,
+    "flaky": 0
+  }
+}

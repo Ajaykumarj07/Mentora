@@ -988,6 +988,10 @@ Extract the structural summary details, main takeaways, and list key terms.`;
   }
 });
 
+app.get("/api/nonexistent-route-error-check", (req, res, next) => {
+  next(new Error("Simulated uncaught error"));
+});
+
 app.use((err: any, req: express.Request, res: express.Response, next: express.NextFunction) => {
   console.error(err);
   res.status(500).json({

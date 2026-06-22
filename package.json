@@ -8,11 +8,15 @@
   },
   "scripts": {
     "dev": "tsx server.ts",
-    "build": "vite build && esbuild server.ts --bundle --platform=node --format=cjs --packages=external --sourcemap --outfile=dist/server.cjs",
-    "start": "node dist/server.cjs",
+    "build": "vite build && esbuild server.ts --bundle --platform=node --format=esm --packages=external --sourcemap --outfile=dist/server.js",
+    "start": "node dist/server.js",
     "clean": "rm -rf dist server.js",
     "lint": "tsc --noEmit",
-    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js"
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
+    "test:e2e": "npx playwright test",
+    "test:e2e:headed": "npx playwright test --headed",
+    "test:e2e:report": "npx playwright show-report reports/playwright-html",
+    "test:e2e:selenium": "mocha tests/mocha-e2e.spec.js --reporter mochawesome --reporter-options reportDir=reports,reportFilename=selenium-report"
   },
   "dependencies": {
     "@google/genai": "^2.4.0",
@@ -32,6 +36,7 @@
   },
   "devDependencies": {
     "@firebase/rules-unit-testing": "^3.0.4",
+    "@playwright/test": "^1.61.0",
     "@types/express": "^4.17.21",
     "@types/jest": "^30.0.0",
     "@types/node": "^22.14.0",
@@ -43,11 +48,15 @@
     "firebase": "^10.14.1",
     "firebase-admin": "^14.0.0",
     "jest": "^30.4.2",
+    "mocha": "^11.7.6",
+    "mochawesome": "^7.1.4",
+    "selenium-webdriver": "^4.44.0",
     "supertest": "^7.2.2",
     "tailwindcss": "^4.1.14",
     "ts-jest": "^29.4.11",
     "tsx": "^4.21.0",
     "typescript": "~5.8.2",
-    "vite": "^6.2.3"
+    "vite": "^6.2.3",
+    "xlsx": "^0.18.5"
   }
 }

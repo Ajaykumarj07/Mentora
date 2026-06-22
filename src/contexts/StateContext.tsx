@@ -201,6 +201,25 @@ export const StateProvider: React.FC<{ children: React.ReactNode }> = ({ childre
 
     const localChats = localStorage.getItem("mentora_chats");
     if (localChats) setChats(JSON.parse(localChats));
+
+    const playwrightMock = localStorage.getItem("playwright_mock_user");
+    if (playwrightMock) {
+      setUser({
+        uid: "mock-student-123",
+        name: "Simulated Student",
+        displayName: "Simulated Student",
+        email: "student@example.com",
+        photoURL: "",
+        role: "student",
+        xp: 120,
+        level: 1,
+        coins: 10,
+        streak: 1,
+        badges: ["First Milestone"]
+      });
+      setIsEmailVerified(true);
+      setLoading(false);
+    }
   }, []);
 
   // Sync state helpers to localStorage for mock/hybrid situations
@@ -308,6 +327,10 @@ export const StateProvider: React.FC<{ children: React.ReactNode }> = ({ childre
       });
 
     const unsubscribe = onAuthStateChanged(auth, async (firebaseUser) => {
+      if (localStorage.getItem("playwright_mock_user")) {
+        setLoading(false);
+        return;
+      }
       if (firebaseUser) {
         setIsEmailVerified(firebaseUser.emailVerified);
         try {
@@ -598,6 +621,7 @@ export const StateProvider: React.FC<{ children: React.ReactNode }> = ({ childre
 
   const logout = async () => {
     localStorage.removeItem("mentora_offline_user");
+    localStorage.removeItem("playwright_mock_user");
     if (!auth) {
       setUser(null);
       return;
