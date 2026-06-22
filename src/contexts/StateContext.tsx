@@ -206,7 +206,6 @@ export const StateProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     if (playwrightMock) {
       setUser({
         uid: "mock-student-123",
-        name: "Simulated Student",
         displayName: "Simulated Student",
         email: "student@example.com",
         photoURL: "",
@@ -215,7 +214,10 @@ export const StateProvider: React.FC<{ children: React.ReactNode }> = ({ childre
         level: 1,
         coins: 10,
         streak: 1,
-        badges: ["First Milestone"]
+        lastActive: new Date().toISOString(),
+        lastLoginAt: new Date().toISOString(),
+        badges: ["First Milestone"],
+        createdAt: new Date().toISOString(),
       });
       setIsEmailVerified(true);
       setLoading(false);
