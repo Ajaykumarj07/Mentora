@@ -73,7 +73,7 @@ jobs:
         # Run Playwright E2E tests under Xvfb (since headless: false is configured)
         xvfb-run npm run test:e2e
       env:
-        NODE_ENV: test
+        NODE_ENV: production
         PORT: 3000
         FIRESTORE_EMULATOR_HOST: "127.0.0.1:8085"
 
