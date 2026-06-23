@@ -7,16 +7,17 @@ export default defineConfig({
   expect: {
     timeout: 10000
   },
-  fullyParallel: false,
-  workers: 1,
+  fullyParallel: true,
+  workers: 4,
   reporter: [
     ['html', { outputFolder: 'reports/playwright-html' }],
     ['json', { outputFile: 'reports/playwright-report.json' }],
     ['list']
   ],
+  outputDir: 'reports/traces',
   use: {
     baseURL: 'http://127.0.0.1:3000',
-    headless: false,
+    headless: true,
     screenshot: 'on',
     video: 'on',
     trace: 'on',
@@ -28,5 +29,6 @@ export default defineConfig({
       name: 'chromium',
       use: { browserName: 'chromium' }
     }
-  ]
+  ],
+  maxFailures: 0
 });

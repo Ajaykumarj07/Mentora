@@ -1,4 +1,4 @@
-name: Mentora QA & Security CI
+name: E2E Test
 
 on:
   push:
@@ -63,7 +63,7 @@ jobs:
         # Wait for port 3000 to be available
         echo "Waiting for server to start on port 3000..."
         for i in {1..30}; do
-          if curl -s http://localhost:3000 > /dev/null; then
+          if curl -s http://127.0.0.1:3000 > /dev/null; then
             echo "Server is up and running!"
             break
           fi
@@ -84,5 +84,3 @@ jobs:
         name: e2e-test-reports-node-${{ matrix.node-version }}
         path: |
           reports/
-          E2E_Test_Report_Mentora.xlsx
-          QA_Demo_Report.md
