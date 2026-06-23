@@ -63,7 +63,7 @@ test.describe('Series 1: Critical Path Student Journey E2E', () => {
 
   test('TC-CRIT-001: Open landing page', async () => {
     const t0 = Date.now();
-    await sharedPage.goto('http://localhost:3000');
+    await sharedPage.goto('http://127.0.0.1:3000');
     await expect(sharedPage).toHaveTitle(/Mentora/i);
     await expect(sharedPage.getByRole('button', { name: /Connect with Google/i })).toBeVisible();
     
@@ -239,14 +239,14 @@ test.describe('Series 2: Functional Testing', () => {
       // Simulate quick API / UI sanity checks
       if (i === 1) {
         // Hit API Health endpoint
-        const response = await page.request.get('http://localhost:3000/api/health');
+        const response = await page.request.get('http://127.0.0.1:3000/api/health');
         expect(response.status()).toBe(200);
         const json = await response.json();
         expect(json.status).toBe('ok');
         recordTest(id, 'Functional Testing', 'API Endpoints', 'GET /api/health returns healthy', 'Request health endpoint', 'HTTP 200 with status ok', 'Passed', 'Passed');
       } else if (i === 2) {
         // Hit AI Health telemetry
-        const response = await page.request.get('http://localhost:3000/api/ai/health');
+        const response = await page.request.get('http://127.0.0.1:3000/api/ai/health');
         expect(response.status()).toBe(200);
         const json = await response.json();
         expect(json.status).toBe('ok');
@@ -254,7 +254,7 @@ test.describe('Series 2: Functional Testing', () => {
         recordTest(id, 'Functional Testing', 'API Endpoints', 'GET /api/ai/health returns telemetry', 'Request AI health', 'List of providers', 'Passed', 'Passed');
       } else if (i === 3) {
         // Rejects notes missing topic
-        const response = await page.request.post('http://localhost:3000/api/gemini/generate-notes', {
+        const response = await page.request.post('http://127.0.0.1:3000/api/gemini/generate-notes', {
           data: { detailLevel: 'advanced' }
         });
         expect(response.status()).toBe(400);
@@ -263,14 +263,14 @@ test.describe('Series 2: Functional Testing', () => {
         recordTest(id, 'Functional Testing', 'API Protection', 'POST generate-notes rejects missing topic', 'Send post request missing topic', 'HTTP 400 bad request', 'Passed', 'Passed');
       } else if (i === 4) {
         // Rejects quiz missing topic
-        const response = await page.request.post('http://localhost:3000/api/gemini/generate-quiz', {
+        const response = await page.request.post('http://127.0.0.1:3000/api/gemini/generate-quiz', {
           data: {}
         });
         expect(response.status()).toBe(400);
         recordTest(id, 'Functional Testing', 'API Protection', 'POST generate-quiz rejects missing topic', 'Send post request missing topic', 'HTTP 400', 'Passed', 'Passed');
       } else if (i === 5) {
         // AI note generator mock topic
-        const response = await page.request.post('http://localhost:3000/api/gemini/generate-notes', {
+        const response = await page.request.post('http://127.0.0.1:3000/api/gemini/generate-notes', {
           data: { topic: 'Microbiology' }
         });
         expect(response.status()).toBe(200);
@@ -293,19 +293,19 @@ test.describe('Series 3: UI Sizing and Styles', () => {
     const id = `TC-UI-${String(i).padStart(3, '0')}`;
     test(`${id}: Verify layout style guideline #${i}`, async ({ page }) => {
       if (i === 1) {
-        await page.goto('http://localhost:3000');
+        await page.goto('http://127.0.0.1:3000');
         const themeClass = await page.locator('html').getAttribute('class');
         expect(themeClass).toBeDefined();
         recordTest(id, 'UI Testing', 'Visual Theme', 'Verify theme class matches configuration', 'Inspect HTML class', 'Contain dark/light theme config tag', 'Passed', 'Passed');
       } else if (i === 2) {
         // Responsive viewport 1920px
         await page.setViewportSize({ width: 1920, height: 1080 });
-        await page.goto('http://localhost:3000');
+        await page.goto('http://127.0.0.1:3000');
         recordTest(id, 'UI Testing', 'Responsive UI', 'Verify layout integrity at 1920px width', 'Resize viewport size to 1920x1080', 'Layout is aligned with no overflows', 'Passed', 'Passed');
       } else if (i === 3) {
         // Responsive viewport 375px
         await page.setViewportSize({ width: 375, height: 812 });
-        await page.goto('http://localhost:3000');
+        await page.goto('http://127.0.0.1:3000');
         recordTest(id, 'UI Testing', 'Responsive UI', 'Verify layout integrity at 375px mobile width', 'Resize viewport size to 375x812', 'Elements stack or sidebar wraps', 'Passed', 'Passed');
       } else {
         recordTest(id, 'UI Testing', 'Responsive UI', `Verify style rules for component container #${i}`, 'N/A', 'Attributes verification matches design system guide', 'Passed', 'Passed');
