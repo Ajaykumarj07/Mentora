@@ -65,8 +65,7 @@ test.describe('Series 1: Critical Path Student Journey E2E', () => {
     const t0 = Date.now();
     await sharedPage.goto('http://localhost:3000');
     await expect(sharedPage).toHaveTitle(/Mentora/i);
-    const body = sharedPage.locator('body');
-    await expect(body).toContainText(/Authorized Access/i);
+    await expect(sharedPage.getByRole('button', { name: /Connect with Google/i })).toBeVisible();
     
     // Capture step screenshot
     await sharedPage.screenshot({ path: './reports/screenshots/TC-CRIT-001_landing.png' });
@@ -223,8 +222,7 @@ test.describe('Series 1: Critical Path Student Journey E2E', () => {
   });
 
   test('TC-CRIT-020: Verify landing page redirect after logout', async () => {
-    const body = sharedPage.locator('body');
-    await expect(body).toContainText(/Authorized Access/i);
+    await expect(sharedPage.getByRole('button', { name: /Connect with Google/i })).toBeVisible();
     
     await sharedPage.screenshot({ path: './reports/screenshots/TC-CRIT-020_auth_landing.png' });
     recordTest('TC-CRIT-020', 'Critical Path', 'Authentication', 'Verify login screen mounts after logout', 'Inspect current visible elements', 'Connect with Google auth card is visible', 'Landing card visible', 'Passed');
