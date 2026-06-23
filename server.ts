@@ -19,7 +19,7 @@ app.use(express.json());
 
 const aiLimiter = rateLimit({
   windowMs: 15 * 60 * 1000,
-  max: 30,
+  max: process.env.NODE_ENV === "test" || process.env.DISABLE_RATE_LIMIT === "true" ? 10000 : 30,
   standardHeaders: true,
   legacyHeaders: false,
   message: {
