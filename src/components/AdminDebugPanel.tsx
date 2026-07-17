@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useAppState } from "../contexts/StateContext";
-import { API_BASE } from "../lib/api";
+import { API_BASE, buildApiUrl } from "../lib/api";
 import { db, auth, finalConfig } from "../lib/firebase";
 import { doc, getDocs, collection, updateDoc } from "firebase/firestore";
 import { UserProfile } from "../types";
@@ -44,7 +44,7 @@ export const AdminDebugPanel: React.FC = () => {
   const fetchAiHealth = async () => {
     setAiLoading(true);
     try {
-      const res = await fetch(`${API_BASE}/api/ai/health`);
+      const res = await fetch(buildApiUrl("/api/ai/health"));
       if (res.ok) {
         const data = await res.json();
         setAiHealth(data);

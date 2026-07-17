@@ -1,5 +1,5 @@
 import { Note, Quiz, Roadmap, ChatMessage } from "../types";
-import { API_BASE } from "./api";
+import { buildApiUrl } from "./api";
 
 export interface AIRecommendation {
   title: string;
@@ -17,8 +17,9 @@ export interface SummaryResult {
 export async function askAiNotes(topic: string, detailLevel: string, customInstructions?: string): Promise<Partial<Note>> {
   console.info(`[Notes-Flow] Step 1: User submitted prompt. Topic: "${topic}", DetailLevel: "${detailLevel}"`);
   try {
-    console.info(`[Notes-Flow] Step 2: AI request started via POST ${API_BASE}/api/gemini/generate-notes`);
-    const response = await fetch(`${API_BASE}/api/gemini/generate-notes`, {
+    const url = buildApiUrl("/api/gemini/generate-notes");
+    console.info(`[Notes-Flow] Step 2: AI request started via POST ${url}`);
+    const response = await fetch(url, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ topic, detailLevel, customInstructions }),
@@ -47,8 +48,9 @@ export async function askAiNotes(topic: string, detailLevel: string, customInstr
 export async function askAiQuiz(topic: string, amount: number, difficulty: string): Promise<Partial<Quiz>> {
   console.info(`[Quiz-Flow] Step 1: User submitted prompt. Topic: "${topic}", Quantity: ${amount}, Difficulty: ${difficulty}`);
   try {
-    console.info(`[Quiz-Flow] Step 2: AI request started via POST ${API_BASE}/api/gemini/generate-quiz`);
-    const response = await fetch(`${API_BASE}/api/gemini/generate-quiz`, {
+    const url = buildApiUrl("/api/gemini/generate-quiz");
+    console.info(`[Quiz-Flow] Step 2: AI request started via POST ${url}`);
+    const response = await fetch(url, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ topic, amount, difficulty }),
@@ -83,8 +85,9 @@ export async function askAiQuiz(topic: string, amount: number, difficulty: strin
 export async function askAiRoadmap(subject: string, durationDays: number): Promise<Partial<Roadmap>> {
   console.info(`[Roadmap-Flow] Step 1: User submitted prompt. Subject: "${subject}", Duration: ${durationDays} days`);
   try {
-    console.info(`[Roadmap-Flow] Step 2: AI request started via POST ${API_BASE}/api/gemini/generate-roadmap`);
-    const response = await fetch(`${API_BASE}/api/gemini/generate-roadmap`, {
+    const url = buildApiUrl("/api/gemini/generate-roadmap");
+    console.info(`[Roadmap-Flow] Step 2: AI request started via POST ${url}`);
+    const response = await fetch(url, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ subject, durationDays }),
@@ -119,8 +122,9 @@ export async function askAiChat(messages: ChatMessage[]): Promise<{ text: string
       sender: m.sender,
       text: m.text,
     }));
-    console.info(`[Chat-Flow] Step 2: AI chat request started via POST ${API_BASE}/api/gemini/chat`);
-    const response = await fetch(`${API_BASE}/api/gemini/chat`, {
+    const url = buildApiUrl("/api/gemini/chat");
+    console.info(`[Chat-Flow] Step 2: AI chat request started via POST ${url}`);
+    const response = await fetch(url, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ messages: cleanMessages }),
@@ -148,7 +152,8 @@ export async function askAiRecommendations(
   completedSubjects: string[]
 ): Promise<{ recommendations: AIRecommendation[] }> {
   try {
-    const response = await fetch(`${API_BASE}/api/gemini/recommendations`, {
+    const url = buildApiUrl("/api/gemini/recommendations");
+    const response = await fetch(url, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ streak, totalXp, currentLevel, completedSubjects }),
@@ -180,7 +185,8 @@ export async function askAiRecommendations(
 
 export async function askAiDocumentSummary(documentName: string, contentText: string): Promise<SummaryResult> {
   try {
-    const response = await fetch(`${API_BASE}/api/gemini/summarize-document`, {
+    const url = buildApiUrl("/api/gemini/summarize-document");
+    const response = await fetch(url, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ documentName, contentText }),

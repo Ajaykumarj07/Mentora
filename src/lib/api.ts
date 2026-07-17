@@ -7,7 +7,15 @@ import { Capacitor } from "@capacitor/core";
  * - This applies to both Web and Capacitor Native platforms, ensuring all API traffic
  *   routes to the centralized Render backend.
  */
-export const API_BASE = (import.meta as any).env.VITE_API_BASE_URL || "https://mentora-28ij.onrender.com";
+// Statically referenced to ensure Vite replaces it during build
+const envBase = import.meta.env.VITE_API_BASE_URL;
+
+export const API_BASE = envBase || "https://mentora-28ij.onrender.com";
+
+export function buildApiUrl(path: string): string {
+  const cleanPath = path.startsWith("/") ? path : `/${path}`;
+  return `${API_BASE}${cleanPath}`;
+}
 
 if (!API_BASE) {
   console.warn(
