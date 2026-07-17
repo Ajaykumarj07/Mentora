@@ -4,6 +4,7 @@ import { motion } from "motion/react";
 import { Header } from "./components/Header";
 import { Sidebar } from "./components/Sidebar";
 import { ToastContainer } from "./components/ToastContainer";
+import { OfflineBanner } from "./components/OfflineBanner";
 import { DashboardView } from "./components/DashboardView";
 import { ChatAssistantView } from "./components/ChatAssistantView";
 import { SmartNotesView } from "./components/SmartNotesView";
@@ -325,9 +326,13 @@ function MainAppContent() {
       {/* Main Content Area split */}
       <div className="flex-1 flex flex-col min-w-0">
         <Header onMenuToggle={() => setSidebarOpen(!sidebarOpen)} />
+
+        {/* Offline detection banner — shown on native when network is unavailable */}
+        <OfflineBanner />
         
         {/* Dynamic viewport container */}
-        <main className="flex-1 overflow-y-auto p-4 md:p-6 lg:p-8">
+        {/* pb-safe ensures content is not hidden behind Android's bottom nav bar */}
+        <main className="flex-1 overflow-y-auto p-4 md:p-6 lg:p-8 pb-safe">
           <div className="max-w-6.5xl mx-auto">
             {/* Display warning banner if email is not verified */}
             {!isEmailVerified && (

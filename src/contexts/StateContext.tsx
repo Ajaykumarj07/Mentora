@@ -1,9 +1,12 @@
 import React, { createContext, useContext, useState, useEffect } from "react";
 import { UserProfile, Note, Quiz, Roadmap, ChatMessage, LeaderboardUser, Toast } from "../types";
 import { auth, db, isMockFirebase as initialIsMock, registerMockFallback, handleFirestoreError, OperationType, formatAuthError, finalConfig } from "../lib/firebase";
-import { onAuthStateChanged, signOut, sendEmailVerification, GoogleAuthProvider, signInWithPopup, setPersistence, browserLocalPersistence, signInWithRedirect, getRedirectResult } from "firebase/auth";
+import { onAuthStateChanged, signOut, sendEmailVerification, GoogleAuthProvider, signInWithPopup, setPersistence, browserLocalPersistence, signInWithRedirect, getRedirectResult, signInWithCredential } from "firebase/auth";
 import { doc, getDoc, setDoc, collection, getDocs, query, where, addDoc, updateDoc, deleteDoc, serverTimestamp } from "firebase/firestore";
 import { UserSyncService } from "../services/userSyncService";
+import { isAndroid, getIsAndroid, getIsIOS, getIsNative } from "../lib/platform";
+import { FirebaseAuthentication } from "@capacitor-firebase/authentication";
+import { Capacitor } from "@capacitor/core";
 
 interface StateContextType {
   user: UserProfile | null;
@@ -496,12 +499,112 @@ export const StateProvider: React.FC<{ children: React.ReactNode }> = ({ childre
       throw new Error("Firebase Authentication is not initialized. Please verify configuration.");
     }
     
+    // Evaluate platform dynamically at execution time
+    const dynamicPlatform = Capacitor.getPlatform();
+    const dynamicIsNative = Capacitor.isNativePlatform();
+    const isAndroidApp = getIsAndroid();
+    const isIOSApp = getIsIOS();
+    const isMobileNative = isAndroidApp || isIOSApp || dynamicIsNative || dynamicPlatform === "android" || dynamicPlatform === "ios";
+
+    console.info(`[Auth] googleSignIn invoked. Platform: ${dynamicPlatform}, Native: ${dynamicIsNative}, isAndroidApp: ${isAndroidApp}, isIOSApp: ${isIOSApp}, isMobileNative: ${isMobileNative}`);
+
     setLoading(true);
     try {
+      // On Android/iOS Native (Capacitor WebView), strictly enforce native Google Sign-in via Capawesome
+      if (isMobileNative) {
+        console.info("[Auth] Native mobile environment detected — calling Capawesome native authentication.");
+        const result = await FirebaseAuthentication.signInWithGoogle({});
+        if (!result.credential?.idToken) {
+          throw new Error("Google Sign-In failed: No ID Token returned from native SDK.");
+        }
+        const credential = GoogleAuthProvider.credential(result.credential.idToken);
+        const userCredential = await signInWithCredential(auth, credential);
+        const user = userCredential.user;
+        
+        console.log("LOGIN SUCCESS");
+        console.log("Google native success: true");
+        console.log("Firebase Auth success: true");
+        console.log("User UID:", user.uid);
+        console.log("AUTH UID:", user.uid);
+        console.log("AUTH EMAIL:", user.email || "");
+
+        console.log("USERSYNC START");
+        const userRef = doc(db, "users", user.uid);
+        const userSnap = await getDoc(userRef);
+
+        if (!userSnap.exists()) {
+          console.log("USER DOC EXISTS: false");
+          console.log("FIRESTORE WRITE START");
+          console.log("Firebase Project ID:", finalConfig.projectId);
+          console.log("Authenticated User UID:", auth?.currentUser?.uid || user.uid);
+          console.log("Authenticated User Email:", auth?.currentUser?.email || user.email || "");
+          console.log("FIRESTORE WRITE PATH:", `users/${user.uid}`);
+          try {
+            const payload = removeUndefinedFields({
+              uid: user.uid,
+              name: user.displayName || "",
+              displayName: user.displayName || "",
+              email: user.email || "",
+              photoURL: user.photoURL || "",
+              role: "student",
+              xp: 100,
+              level: 1,
+              coins: 5,
+              streak: 1,
+              badges: ["First Milestone"],
+              createdAt: serverTimestamp(),
+              lastLoginAt: serverTimestamp(),
+              lastActive: serverTimestamp()
+            });
+            console.log("Firestore Payload:", payload);
+            await setDoc(userRef, payload);
+            console.log("USER DOC CREATED: true");
+            console.log("FIRESTORE WRITE SUCCESS");
+            console.log("Firestore write result: success");
+          } catch (error: any) {
+            console.error("FIRESTORE ERROR CODE:", error.code);
+            console.error("FIRESTORE ERROR MESSAGE:", error.message);
+            console.error("FIRESTORE ERROR OBJECT:", error);
+            console.log("USER DOC CREATED: false");
+            console.log("FIRESTORE WRITE ERROR", error);
+            console.log("FIRESTORE ERROR:", error);
+            throw error;
+          }
+        } else {
+          console.log("USER DOC EXISTS: true");
+          console.log("FIRESTORE WRITE START");
+          console.log("Firebase Project ID:", finalConfig.projectId);
+          console.log("Authenticated User UID:", auth?.currentUser?.uid || user.uid);
+          console.log("Authenticated User Email:", auth?.currentUser?.email || user.email || "");
+          console.log("FIRESTORE WRITE PATH:", `users/${user.uid}`);
+          try {
+            const payload = removeUndefinedFields({
+              lastLoginAt: serverTimestamp(),
+              lastActive: serverTimestamp()
+            });
+            console.log("Firestore Payload:", payload);
+            await updateDoc(userRef, payload);
+            console.log("USER DOC UPDATED: true");
+            console.log("FIRESTORE WRITE SUCCESS");
+            console.log("Firestore write result: success");
+          } catch (error: any) {
+            console.error("FIRESTORE ERROR CODE:", error.code);
+            console.error("FIRESTORE ERROR MESSAGE:", error.message);
+            console.error("FIRESTORE ERROR OBJECT:", error);
+            console.log("USER DOC UPDATED: false");
+            console.log("FIRESTORE WRITE ERROR", error);
+            console.log("FIRESTORE ERROR:", error);
+            throw error;
+          }
+        }
+
+        addToast("success", "Welcome Academic", `Log-in successful! Welcome back, ${user.displayName || "Scholar"}.`);
+        return;
+      }
+
+      // On Web, use standard popup-based sign-in
       const provider = new GoogleAuthProvider();
       provider.setCustomParameters({ prompt: "select_account" });
-      
-      // Explicitly enforce local persistence so that sessions persist across page refreshes
       await setPersistence(auth, browserLocalPersistence);
       
       try {

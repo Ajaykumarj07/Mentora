@@ -3,6 +3,7 @@ import { useAppState } from "../contexts/StateContext";
 import { motion, AnimatePresence } from "motion/react";
 import { Shield, Sparkles, BookOpen, BrainCircuit, Compass, AlertCircle, ArrowRight } from "lucide-react";
 import { Logo } from "./common/Logo";
+import { isAndroid } from "../lib/platform";
 
 export const AuthView: React.FC = () => {
   const { googleSignIn, addToast, currentTheme } = useAppState();
@@ -179,9 +180,16 @@ export const AuthView: React.FC = () => {
                     <svg className="w-4 h-4 text-red-400 group-hover:scale-110 transition-transform duration-200" fill="currentColor" viewBox="0 0 24 24">
                       <path d="M12.24 10.285V13.4h6.887C18.2 15.614 15.645 18 12.24 18c-3.86 0-7-3.14-7-7s3.14-7 7-7c1.7 0 3.25.61 4.46 1.64l2.384-2.384C17.307 1.697 14.93 1 12.24 1 6.58 1 2 5.58 2 11.24s4.58 10.24 10.24 10.24c5.79 0 10.24-4.06 10.24-10.24 0-.69-.06-1.35-.18-1.955H12.24z" />
                     </svg>
-                    <span>Connect with Google</span>
+                    <span>{isAndroid ? "Sign in with Google" : "Connect with Google"}</span>
                     <ArrowRight className="w-3.5 h-3.5 text-slate-500 group-hover:text-white transition-colors duration-200" />
                   </button>
+
+                  {/* Android native prompt notice */}
+                  {isAndroid && (
+                    <p className={`text-center text-[10px] font-mono ${subText}`}>
+                      You will be prompted to choose a Google Account.
+                    </p>
+                  )}
 
                   <div className="pt-4 border-t border-white/5 space-y-4">
                     <div className="flex gap-2.5 items-start">

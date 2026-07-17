@@ -145,7 +145,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
       </aside>
 
       {/* Floating Bottom Navigation Bar for Mobile Viewports (Collapses automatically) */}
-      <nav className="fixed bottom-0 left-0 right-0 z-40 bg-slate-950 border-t border-white/10 flex md:hidden items-center justify-around py-2.5 px-4 backdrop-blur-lg select-none">
+      <nav className="fixed bottom-0 left-0 right-0 z-40 bg-slate-950 border-t border-white/10 flex md:hidden items-center justify-around py-2.5 px-4 backdrop-blur-lg select-none pb-safe">
         {menuItems.slice(0, 5).map((item) => {
           const Icon = item.icon;
           const isActive = activeTab === item.id;
@@ -153,7 +153,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
             <button
               key={item.id}
               onClick={() => setActiveTab(item.id)}
-              className="flex flex-col items-center justify-center outline-hidden tap-highlight-transparent"
+              className="flex flex-col items-center justify-center outline-hidden tap-highlight-transparent touch-target"
             >
               <Icon className={`w-5 h-5 ${isActive ? item.accent : "text-slate-500"}`} />
               <span className={`text-[9px] mt-1 font-sans ${isActive ? "text-white font-bold" : "text-slate-500"}`}>
@@ -165,7 +165,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
         {/* Profile on mobile */}
         <button
           onClick={() => setActiveTab("profile")}
-          className="flex flex-col items-center justify-center outline-hidden select-none"
+          className="flex flex-col items-center justify-center outline-hidden select-none tap-highlight-transparent touch-target"
         >
           <div className={`w-5 h-5 rounded-full bg-slate-800 border-2 ${activeTab === "profile" ? "border-teal-400 bg-teal-500" : "border-slate-600"} flex items-center justify-center text-[8px] font-black text-white`}>
             {user?.displayName ? user.displayName.charAt(0).toUpperCase() : "U"}

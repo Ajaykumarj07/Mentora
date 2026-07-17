@@ -4,6 +4,7 @@ import * as dns from "dns";
 import { createServer as createViteServer } from "vite";
 import { GoogleGenAI, Type } from "@google/genai";
 import * as dotenv from "dotenv";
+import cors from "cors";
 import { AIProviderService } from "./src/services/aiProvider";
 import { rateLimit } from "express-rate-limit";
 
@@ -16,6 +17,25 @@ if (typeof dns.setDefaultResultOrder === "function") {
 
 const app = express();
 app.use(express.json());
+
+const allowedOrigins = [
+  "https://mentora-ai-ruby.vercel.app",
+  "http://localhost:3000",
+  "http://localhost:5173",
+  "capacitor://localhost",
+  "http://localhost"
+];
+
+app.use(cors({
+  origin: function (origin, callback) {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error("Not allowed by CORS"));
+    }
+  },
+  credentials: true
+}));
 
 const aiLimiter = rateLimit({
   windowMs: 15 * 60 * 1000,

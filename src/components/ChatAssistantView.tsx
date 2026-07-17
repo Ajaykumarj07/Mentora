@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect, useMemo } from "react";
 import { useAppState } from "../contexts/StateContext";
 import { motion, AnimatePresence } from "motion/react";
+import { API_BASE } from "../lib/api";
 import Markdown from "react-markdown";
 import {
   Sparkles,
@@ -121,8 +122,8 @@ export const ChatAssistantView: React.FC = () => {
   useEffect(() => {
     const checkBackendHealth = async () => {
       try {
-        console.info("[API-Key-Loading] STAGE 2: Querying server /api/health endpoint...");
-        const res = await fetch("/api/health");
+        console.info(`[API-Key-Loading] STAGE 2: Querying server ${API_BASE}/api/health endpoint...`);
+        const res = await fetch(`${API_BASE}/api/health`);
         if (res.ok) {
           const data = await res.json();
           setBackendHasGeminiKey(!!data.hasGeminiKey);
@@ -587,7 +588,7 @@ I'm your virtual learning assistant. Let's study, explore concepts, or solve fil
       console.info("[Chat-Lifecycle] STAGE 3: Formulating endpoint fetch. Payload size:", clientMessageHistory.length);
 
       // Attempt chunk stream
-      const response = await fetch("/api/gemini/chat-stream", {
+      const response = await fetch(`${API_BASE}/api/gemini/chat-stream`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -693,7 +694,7 @@ I'm your virtual learning assistant. Let's study, explore concepts, or solve fil
           text: m.sender === "user" && m.fileContextName ? `[Attached details in document or file context named "${m.fileContextName}"]\n\n${m.text}` : m.text
         }));
 
-        const response = await fetch("/api/gemini/chat", {
+        const response = await fetch(`${API_BASE}/api/gemini/chat`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({

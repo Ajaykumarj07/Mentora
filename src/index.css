@@ -18,6 +18,55 @@
   --color-slate-900: #111827;
 }
 
+/* ====================================================
+   SAFE AREA & MOBILE NATIVE SHELL SUPPORT
+   Required for Capacitor / Android display cutouts
+   ==================================================== */
+
+/* Expose safe area insets as CSS custom properties */
+:root {
+  --safe-area-top: env(safe-area-inset-top, 0px);
+  --safe-area-bottom: env(safe-area-inset-bottom, 0px);
+  --safe-area-left: env(safe-area-inset-left, 0px);
+  --safe-area-right: env(safe-area-inset-right, 0px);
+}
+
+/* Prevent rubber-band / elastic scrolling on mobile native shells */
+html, body {
+  overscroll-behavior: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Prevent text size adjustment on orientation change */
+body {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+/* Safe-area utility classes */
+.pt-safe { padding-top: var(--safe-area-top); }
+.pb-safe { padding-bottom: var(--safe-area-bottom); }
+.pl-safe { padding-left: var(--safe-area-left); }
+.pr-safe { padding-right: var(--safe-area-right); }
+
+/* Remove tap highlight on Android WebView */
+.tap-highlight-transparent {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Ensure all buttons don't show tap highlight on Android */
+button, a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Touch-friendly minimum hit area */
+.touch-target {
+  min-height: 44px;
+  min-width: 44px;
+}
+
+
+
 /* Glassmorphism utility classes */
 .glass-panel {
   background: rgba(15, 23, 42, 0.45);

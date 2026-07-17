@@ -8,3 +8,22 @@ coverage/
 !.env.example
 reports/
 test-results/
+
+# Android build outputs
+android/app/build/
+android/.gradle/
+android/build/
+android/local.properties
+
+# iOS build outputs (for future iOS support)
+ios/App/build/
+ios/.xcode.env.local
+
+# Android signing keystores (NEVER commit these)
+*.jks
+*.keystore
+android/gradle.properties.local
+
+# Capacitor generated config (regenerated on sync)
+android/app/src/main/assets/capacitor.config.json
+android/app/src/main/assets/capacitor.plugins.json

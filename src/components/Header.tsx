@@ -25,7 +25,7 @@ export const Header: React.FC<HeaderProps> = ({ onMenuToggle }) => {
   const progressPercent = Math.min((currentLevelXp / 500) * 100, 100);
 
   return (
-    <header className="flex flex-col md:flex-row md:items-center justify-between border-b border-white/10 p-4 md:px-6 bg-slate-900/65 backdrop-blur-md gap-4">
+    <header className="flex flex-col md:flex-row md:items-center justify-between border-b border-white/10 p-4 md:px-6 bg-slate-900/65 backdrop-blur-md gap-4 pt-safe">
       {/* Left section: App Branding or Hamburger */}
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-3">

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Network Security Configuration for Mentora AI
+  - Enforces HTTPS-only traffic in production (no cleartext HTTP)
+  - Allows localhost for Capacitor live-reload during development
+-->
+<network-security-config>
+    <domain-config cleartextTrafficPermitted="false">
+        <domain includeSubdomains="true">mentora.ai</domain>
+    </domain-config>
+
+    <!-- Allow localhost for Capacitor dev server live-reload -->
+    <domain-config cleartextTrafficPermitted="true">
+        <domain includeSubdomains="false">localhost</domain>
+        <domain includeSubdomains="false">10.0.2.2</domain>
+    </domain-config>
+</network-security-config>
