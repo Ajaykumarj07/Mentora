@@ -9,8 +9,9 @@ import { Capacitor } from "@capacitor/core";
  */
 // Statically referenced to ensure Vite replaces it during build
 const envBase = import.meta.env.VITE_API_BASE_URL;
+const isValidUrl = typeof envBase === "string" && (envBase.startsWith("http://") || envBase.startsWith("https://"));
 
-export const API_BASE = envBase || "https://mentora-28ij.onrender.com";
+export const API_BASE = isValidUrl ? envBase : "https://mentora-28ij.onrender.com";
 
 export function buildApiUrl(path: string): string {
   const cleanPath = path.startsWith("/") ? path : `/${path}`;
