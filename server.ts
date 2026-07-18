@@ -16,26 +16,61 @@ if (typeof dns.setDefaultResultOrder === "function") {
 }
 
 const app = express();
-app.use(express.json());
 
+// --- CORS Configuration (production-safe) ---
+// Exact-match whitelist
 const allowedOrigins = [
   "https://mentora-ai-ruby.vercel.app",
+  "https://mentora-28ij.onrender.com",
   "http://localhost:3000",
   "http://localhost:5173",
   "capacitor://localhost",
   "http://localhost"
 ];
 
+// Pattern-match rules for dynamic origins
+function isOriginAllowed(origin: string): boolean {
+  // Exact match
+  if (allowedOrigins.includes(origin)) return true;
+  // All Vercel preview/production deployments
+  if (/^https:\/\/[\w-]+\.vercel\.app$/.test(origin)) return true;
+  // All localhost ports (http://localhost:XXXX)
+  if (/^http:\/\/localhost(:\d+)?$/.test(origin)) return true;
+  return false;
+}
+
+// Custom CORS check middleware to reject unauthorized origins with a 403 response
+app.use((req, res, next) => {
+  const origin = req.headers.origin;
+  if (origin && !isOriginAllowed(origin)) {
+    console.warn(`[CORS] Blocked request from origin: ${origin}`);
+    return res.status(403).json({
+      success: false,
+      error: "Forbidden: Origin not allowed"
+    });
+  }
+  next();
+});
+
 app.use(cors({
-  origin: function (origin, callback) {
-    if (!origin || allowedOrigins.includes(origin)) {
+  origin: function (origin: string | undefined, callback: (err: Error | null, allow?: boolean) => void) {
+    // Allow requests with no Origin (server-to-server, curl, mobile native)
+    if (!origin) {
+      callback(null, true);
+      return;
+    }
+    if (isOriginAllowed(origin)) {
       callback(null, true);
     } else {
-      callback(new Error("Not allowed by CORS"));
+      callback(null, false);
     }
   },
   credentials: true
 }));
+
+// Body parsers (after CORS so OPTIONS preflight is handled first)
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 const aiLimiter = rateLimit({
   windowMs: 15 * 60 * 1000,
@@ -183,16 +218,33 @@ async function runMultiProviderAi(config: MultiProviderConfig): Promise<{ text: 
   });
 }
 
-// Check api health and key config
+// Check api health and key config (public endpoint)
 app.get("/api/health", (req, res) => {
   res.json({
     status: "ok",
+    uptime: process.uptime(),
+    environment: process.env.NODE_ENV || "development",
+    version: "1.0.0",
+    timestamp: new Date().toISOString(),
     hasGeminiKey: !!process.env.GEMINI_API_KEY,
   });
 });
 
-// Expose full AI health check telemetry for Admin/diagnostics view (STEP 6)
+// Expose full AI health check telemetry for Admin/diagnostics view
+// Protected: only returns provider details in non-production or when ?admin=true
 app.get("/api/ai/health", (req, res) => {
+  const isProduction = process.env.NODE_ENV === "production";
+  const isAdmin = req.query.admin === "true";
+
+  // In production without admin flag, return minimal info
+  if (isProduction && !isAdmin) {
+    return res.json({
+      status: "ok",
+      uptime: process.uptime(),
+      environment: "production",
+    });
+  }
+
   res.json({
     status: "ok",
     providers: AIProviderService.getProviders().map(p => ({
@@ -1008,38 +1060,90 @@ Extract the structural summary details, main takeaways, and list key terms.`;
   }
 });
 
-app.get("/api/nonexistent-route-error-check", (req, res, next) => {
-  next(new Error("Simulated uncaught error"));
-});
-
+// Global error handler — distinguishes CORS, validation, and server errors
 app.use((err: any, req: express.Request, res: express.Response, next: express.NextFunction) => {
-  console.error(err);
+  // Prevent double-sending if headers already sent
+  if (res.headersSent) {
+    return next(err);
+  }
+
+  const errMessage = err?.message || "";
+
+  // CORS rejection — return 403, never 500
+  if (errMessage.toLowerCase().includes("cors") || errMessage.toLowerCase().includes("not allowed")) {
+    console.warn(`[Error-Handler] CORS rejection: ${errMessage}`);
+    return res.status(403).json({
+      success: false,
+      error: "Forbidden: Origin not allowed"
+    });
+  }
+
+  // Validation errors (e.g. malformed JSON body)
+  if (err.type === "entity.parse.failed" || err.status === 400) {
+    console.warn(`[Error-Handler] Validation error: ${errMessage}`);
+    return res.status(400).json({
+      success: false,
+      error: "Bad request: " + (errMessage || "Invalid input")
+    });
+  }
+
+  // Unknown server errors — 500
+  console.error("[Error-Handler] Unhandled server error:", err);
   res.status(500).json({
     success: false,
     error: "Internal server error"
   });
 });
 
+// --- Crash safety ---
+process.on("uncaughtException", (err) => {
+  console.error("[FATAL] Uncaught Exception:", err);
+});
+
+process.on("unhandledRejection", (reason, promise) => {
+  console.error("[FATAL] Unhandled Promise Rejection:", reason);
+});
+
 // Configure Vite middleware and static serving
 async function startServer() {
-  if (process.env.NODE_ENV !== "production") {
+  // --- Startup diagnostics ---
+  const nodeEnv = process.env.NODE_ENV || "development";
+  console.log("========================================");
+  console.log("[Startup] Mentora AI Backend");
+  console.log(`[Startup] NODE_ENV: ${nodeEnv}`);
+  console.log(`[Startup] PORT: ${PORT}`);
+  console.log("[Startup] Environment Variables:");
+  console.log(`  GEMINI_API_KEY: ${process.env.GEMINI_API_KEY ? "✓ present" : "✗ MISSING"}`);
+  console.log(`  GROQ_API_KEY: ${process.env.GROQ_API_KEY ? "✓ present" : "✗ missing"}`);
+  console.log(`  OPENROUTER_API_KEY: ${process.env.OPENROUTER_API_KEY ? "✓ present" : "✗ missing"}`);
+  console.log("[Startup] Active AI Providers:");
+  AIProviderService.getProviders().forEach(p => {
+    console.log(`  ${p.name}: ${p.enabled ? "✓ enabled" : "✗ disabled"} (${p.model})`);
+  });
+  console.log("[Startup] Allowed Origins:", allowedOrigins);
+  console.log("[Startup] Dynamic Origin Patterns: *.vercel.app, localhost:*");
+  console.log("========================================");
+
+  if (nodeEnv !== "production") {
     const vite = await createViteServer({
       server: { middlewareMode: true },
       appType: "spa",
     });
     app.use(vite.middlewares);
-    console.log("Mounted Vite development middleware.");
+    console.log("[Startup] Mounted Vite development middleware.");
   } else {
     const distPath = path.join(process.cwd(), "dist");
+    console.log(`[Startup] Static assets directory: ${distPath}`);
     app.use(express.static(distPath));
     app.get("*", (req, res) => {
       res.sendFile(path.join(distPath, "index.html"));
     });
-    console.log("Serving compiled production assets from /dist.");
+    console.log("[Startup] Serving compiled production assets from /dist.");
   }
 
   app.listen(PORT, "0.0.0.0", () => {
-    console.log(`Server launched successfully. Listening on port ${PORT}`);
+    console.log(`[Startup] Server launched successfully. Listening on port ${PORT}`);
+    console.log(`[Startup] Health check: http://localhost:${PORT}/api/health`);
   });
 }
 
