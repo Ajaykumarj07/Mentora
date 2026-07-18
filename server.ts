@@ -25,7 +25,8 @@ const allowedOrigins = [
   "http://localhost:3000",
   "http://localhost:5173",
   "capacitor://localhost",
-  "http://localhost"
+  "http://localhost",
+  "https://localhost"
 ];
 
 // Pattern-match rules for dynamic origins
@@ -34,8 +35,8 @@ function isOriginAllowed(origin: string): boolean {
   if (allowedOrigins.includes(origin)) return true;
   // All Vercel preview/production deployments
   if (/^https:\/\/[\w-]+\.vercel\.app$/.test(origin)) return true;
-  // All localhost ports (http://localhost:XXXX)
-  if (/^http:\/\/localhost(:\d+)?$/.test(origin)) return true;
+  // All localhost ports (http://localhost:XXXX or https://localhost:XXXX)
+  if (/^https?:\/\/localhost(:\d+)?$/.test(origin)) return true;
   return false;
 }
 
